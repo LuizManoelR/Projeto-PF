@@ -1,8 +1,11 @@
-const canvas = document.getElementById("jogoPrincipal");
+const canvas = document.getElementById("jogoPrincipal"); // atribuir a const canvas ao canvas do JogoPrincipal
 const ctx = canvas.getContext("2d");
+// console.log(canvas)
+// console.log(ctx)
 
 const IniciarJogo = () => {
     const img = new Image();
+    console.log(img)
 
     document.getElementById("start").style.display = "none"
 
@@ -33,7 +36,6 @@ const DesenharSeta = (direcao) => {
         }
         seta.src = "3.jpg";
     }
-
 }
 
-IniciarJogo()
+// IniciarJogo()
