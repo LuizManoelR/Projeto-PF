@@ -1,4 +1,4 @@
-function IniciarJogos () {
+function IniciarJogo() {
     document.getElementById("imagemPrincipal").style.display = "absolute"
     document.getElementById("imagemPrincipal").src = "1.jpg"
     document.getElementById("start").style.display = "none"
