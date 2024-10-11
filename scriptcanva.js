@@ -1,14 +1,13 @@
-const canvas = document.getElementById("jogoPrincipal"); // atribuir a const canvas ao canvas do JogoPrincipal
+const canvas = document.getElementById("jogoPrincipal");
 const ctx = canvas.getContext("2d");
-// console.log(canvas)
-// console.log(ctx)
 
 const IniciarJogo = () => {
     const img = new Image();
-    console.log(img)
 
     document.getElementById("start").style.display = "none"
-
+    document.getElementById('direita').style.display = "flex"
+    document.getElementById('esquerda').style.display = "flex"
+    
     img.onload = () => {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     }
@@ -18,24 +17,25 @@ const IniciarJogo = () => {
     DesenharSeta(1)
 }
 
-const DesenharSeta = (direcao) => {
+/*const DesenharSeta = (direcao) => {
     const seta = new Image();
     console.log(canvas.width/2)
 
-    const setaHeight = 200
-    const setaWidth =  200
+    const setaHeight = 50
+    const setaWidth =  50
 
     if (direcao == 0) {
         seta.onload = () => {
             ctx.drawImage(seta, 0, (canvas.height - setaHeight)/2, setaHeight, setaWidth);
         }
-        seta.src = "2.jpg";
+        seta.src = "botao esquerda.jpg";
     } else {
         seta.onload = () => {
             ctx.drawImage(seta, (canvas.width - setaWidth), (canvas.height - setaHeight)/2, setaHeight, setaWidth);
         }
         seta.src = "3.jpg";
     }
-}
 
-// IniciarJogo()
+}*/
+
+//IniciarJogo()

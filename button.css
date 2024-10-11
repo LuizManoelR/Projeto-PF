@@ -1,0 +1,37 @@
+#start{
+    z-index: 1 ;
+    width: 100px;
+    position: absolute;
+    top: 400px;
+    left: 355px;
+} 
+#direita{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    left: 740px;
+    top: 360px;
+    background: none;
+    border: none ;
+}
+button:hover{
+transform: scale(1.05);
+transition: transform 200ms ease-in-out;
+}
+#bt_right{
+    width: 35px;
+    left: 1px;
+}
+#esquerda{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    left: 20px;
+    top: 360px;
+    background: none;
+    border: none ;
+}
+#bt_left{
+    width: 35px;
+    left: 1px;
+}
