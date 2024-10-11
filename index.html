@@ -8,16 +8,57 @@
     <link rel="stylesheet" href="button.css">
 </head>
 <body>
-    <button id="start" onclick="IniciarJogo()">START GAME </button>
     <canvas id="jogoPrincipal" width="800" height="800"></canvas>
-    <button style="display: none;"
-        class = 'bt_mov' id="esquerda" onclick="VirarEsq()">
-        <img id = 'bt_left'src="botao esquerda.png" >
+    <button id="start" onclick="IniciarJogo()">START GAME </button>
+
+    <button style="display: none;" class='bt_mov' id="esquerda" onclick="VirarEsq()">
+        <img id='bt_left'src="botao esquerda.png" >
     </button>
-    <button style="display: none;"
-     class = 'bt_mov' id="direita" onclick="VirarDir()">
-    <img id = 'bt_right' src="botao direita.png"  > 
+    <button style="display: none;" class='bt_mov' id="direita" onclick="VirarDir()">
+        <img id='bt_right' src="botao direita.png"  > 
     </button>
+
+    
+    <inventario id="inventariogeral"> <!-- Itens e Inventário -->
+
+        <!-- Itens para adicionar ao inventário -->
+        <button id='fechadura' onclick="usarElementoINV(0, 'fechadura')"> 
+            <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="start.jpg"/>
+        </button>
+        <button id='chave' onclick="atualizarElementoINV(0, 'chave')">
+            <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="chave.png"/>
+        </button>
+
+        <!-- Inventário em Si -->
+        <button class="btn_inventory">1 
+            <inv id="inv0">
+                <img class="btn_inventory_semPadrao" src="chave.png"/>
+                <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(0)" id="inv0Check" style="opacity: 0%;">
+            </inv>
+        </button>
+
+        <button class="btn_inventory" style="left: 256px;">2 
+            <inv id="inv1">
+                <!-- <img class="btn_inventory_semPadrao" src=""/> Aqui você deve colocar os outros itens-->
+                <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(1)" id="inv1Check" style="opacity: 0%;">
+            </inv>
+        </button>
+
+        <button class="btn_inventory" style="left: 382px;">3 
+            <inv id="inv2">
+                <!-- <img class="btn_inventory_semPadrao" src=""/> -->
+                <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(2)" id="inv2Check" style="opacity: 0%;">
+            </inv>
+        </button>
+
+        <button class="btn_inventory" style="left: 508px;">4 
+            <inv id="inv3">
+                <!-- <img class="btn_inventory_semPadrao" src=""/> -->
+                <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(3)" id="inv3Check" style="opacity: 0%;">
+            </inv>
+        </button>
+
+    </inventario>
 
     <script src="./scriptcanva.js"></script>
 </body>
