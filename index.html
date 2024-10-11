@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,19 @@
     <link rel="stylesheet" href="./style2canva.css">
     <link rel="stylesheet" href="button.css">
 </head>
+
 <body>
     <canvas id="jogoPrincipal" width="800" height="800"></canvas>
     <button id="start" onclick="IniciarJogo()">START GAME </button>
 
     <button style="display: none;" class='bt_mov' id="esquerda" onclick="VirarEsq()">
-        <img id='bt_left'src="botao esquerda.png" >
+        <img class ="imgbt" src="botao esquerda.png" >
     </button>
     <button style="display: none;" class='bt_mov' id="direita" onclick="VirarDir()">
-        <img id='bt_right' src="botao direita.png"  > 
+        <img class ="imgbt" src="botao direita.png"  > 
+    </button>
+    <button style="display: none;" class= "bt_mov" id="baixo" onclick="">
+        <img class ="imgbt" src="botao baixo.png">
     </button>
 
     
@@ -61,5 +66,7 @@
     </inventario>
 
     <script src="./scriptcanva.js"></script>
+    
 </body>
+
 </html>

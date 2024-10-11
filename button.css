@@ -5,38 +5,37 @@
     top: 400px;
     left: 355px;
 } 
-
-#direita{
-    width: 40px;
-    height: 40px;
-    display: flex;
-    left: 740px;
-    top: 360px;
-    background: none;
-    border: none ;
-}
-
-button:hover{
+#start:hover{
     transform: scale(1.05);
     transition: transform 200ms ease-in-out;
 }
-
-#bt_right{
-    width: 35px;
-    left: 1px;
-}
-
-#esquerda{
+.bt_mov{
     width: 40px;
     height: 40px;
     display: flex;
-    left: 20px;
-    top: 360px;
     background: none;
     border: none ;
 }
+.bt_mov:hover{
+transform: scale(1.05);
+transition: transform 200ms ease-in-out;
+}
 
-#bt_left{
+#esquerda{
+    left: 20px;
+    top: 360px;
+    
+}
+#direita{
+    left: 740px;
+    top: 360px;
+    
+}
+#baixo{
+    left: 380px;
+    top: 750px;
+}
+.imgbt{
     width: 35px;
     left: 1px;
 }
