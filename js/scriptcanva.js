@@ -3,9 +3,9 @@ const ctx = canvas.getContext("2d");
 
 document.getElementById('inventariogeral').style.display = "none" // Evita que o inventário apareça antes de iniciar o jogo
 
+const img = new Image(); //Constante para gerar uma imagem
 
 const IniciarJogo = () => {
-    const img = new Image(); //Constante para gerar uma imagem
     
     const inventario = new Image();
 
@@ -28,22 +28,44 @@ const IniciarJogo = () => {
     inventario.src = "./img/inventario/inventario.png";
 }
 
-const background = (direcao)=> { //Função para passar as imagens com click
-
-    const img = new Image (); //Constante para gerar uma imagem
-
-    if (direcao =="esquerda")  { //Se o parametro direcao for == esquerda, gere uma imagem com o src especificado
-        img.onload = () => {
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-         }   
-         img.src = "./img/imgFundo/0002.png"; 
-     } 
-     else {
-        img.onload = () => { // Se não for, gere uma imagem pro caso de ser == direita
-            ctx.drawImage(img, 0, 0, canvas.width,canvas.height)
-        } 
-        img.src = "./img/imgFundo/0003.png";
+const filterNome = (lista) => {
+    const helper = ([x, ...xs]) => {
+        if (x === undefined) {
+            return []
+        } else {
+            if (xs.indexOf("/") != -1) {
+                return [...helper(xs)]
+            } else {
+                return [x, ...helper(xs)]
+            }
+        }
     }
+    const listaAtual = lista.toString().split("")
+    return helper(listaAtual)
+}
+
+const mudeImgSrc = (direcao, imagemEsq, imagemDir) => {
+    if (direcao =="esquerda")  { //Se o parametro direção for == esquerda, gere uma imagem com o src especificado
+        img.src = imagemEsq; 
+    } 
+    else { // Se não for, gere uma imagem para o caso de ser == direita
+       img.src = imagemDir;
+   }
+}
+
+const background = (direcao) => { //Função para passar as imagens com click
+    const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i)
+
+    if (imagemAtual == "/0001.png") {
+        mudeImgSrc(direcao, "./img/imgFundo/0002.png", "./img/imgFundo/0003.png")
+    } else if (imagemAtual == "/0002.png") {
+        mudeImgSrc(direcao, "./img/imgFundo/0004.png", "./img/imgFundo/0001.png")
+    } else if (imagemAtual == "/0003.png" ) {
+        mudeImgSrc(direcao, "./img/imgFundo/0001.png", "./img/imgFundo/0004.png")
+    } else if (imagemAtual == "/0004.png" ) {
+        mudeImgSrc(direcao, "./img/imgFundo/0003.png", "./img/imgFundo/0002.png")
+    } 
+
 }
 
 // Funções de Inventários
