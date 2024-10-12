@@ -24,7 +24,7 @@ const IniciarJogo = () => {
         ctx.drawImage(inventario, canvas.width - 679, canvas.height - 170, canvas.width * 0.6, canvas.height * 0.15);
     }
     console.log(img)
-    img.src = "./img/imgFundo/1.png";
+    img.src = "./img/imgFundo/0001.png";
     inventario.src = "./img/inventario/inventario.png";
 }
 
@@ -36,13 +36,13 @@ const background = (direcao)=> { //Função para passar as imagens com click
         img.onload = () => {
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
          }   
-         img.src = "./img/imgFundo/2.png"; 
+         img.src = "./img/imgFundo/0002.png"; 
      } 
      else {
         img.onload = () => { // Se não for, gere uma imagem pro caso de ser == direita
             ctx.drawImage(img, 0, 0, canvas.width,canvas.height)
         } 
-        img.src = "./img/imgFundo/3.png";
+        img.src = "./img/imgFundo/0003.png";
     }
 }
 
