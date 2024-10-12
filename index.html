@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style2canva.css">
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/button.css">
 </head>
 
 <body>
@@ -14,13 +14,13 @@
     <button id="start" onclick="IniciarJogo()">START GAME </button>
 
     <button style="display: none;" class='bt_mov' id="esquerda" onclick="background('esquerda')">
-        <img class ="imgbt" src="botao esquerda.png" >
+        <img class ="imgbt" src="./img/interfaceUsuario/botao_esquerda.png" >
     </button>
     <button style="display: none;" class='bt_mov' id="direita" onclick="background()">
-        <img class ="imgbt" src="botao direita.png"  > 
+        <img class ="imgbt" src="./img/interfaceUsuario/botao_direita.png"  > 
     </button>
     <button style="display: none;" class= "bt_mov" id="baixo" onclick="">
-        <img class ="imgbt" src="botao baixo.png">
+        <img class ="imgbt" src="./img/interfaceUsuario/botao_baixo.png">
     </button>
 
     
@@ -28,16 +28,16 @@
 
         <!-- Itens para adicionar ao inventário -->
         <button id='fechadura' onclick="usarElementoINV(0, 'fechadura')"> 
-            <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="start.jpg"/>
+            <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="./img/inventario/start.jpg"/>
         </button>
         <button id='chave' onclick="atualizarElementoINV(0, 'chave')">
-            <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="chave.png"/>
+            <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="./img/inventario/chave.png"/>
         </button>
 
         <!-- Inventário em Si -->
         <button class="btn_inventory">1 
             <inv id="inv0">
-                <img class="btn_inventory_semPadrao" src="chave.png"/>
+                <img class="btn_inventory_semPadrao" src="./img/inventario/chave.png"/>
                 <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(0)" id="inv0Check" style="opacity: 0%;">
             </inv>
         </button>
@@ -65,7 +65,7 @@
 
     </inventario>
 
-    <script src="./scriptcanva.js"></script>
+    <script src="./js/scriptcanva.js"></script>
     
 </body>
 
