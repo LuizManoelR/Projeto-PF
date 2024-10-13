@@ -17,6 +17,12 @@
     border: none ;
 }
 
+.bt_int {
+    background: none;
+    /* border: none ; */
+    
+}
+
 .bt_mov:hover{
 transform: scale(1.05);
 transition: transform 200ms ease-in-out;

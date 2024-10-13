@@ -16,6 +16,10 @@ const IniciarJogo = () => {
     document.getElementById('direita').style.display = "flex" 
     document.getElementById('esquerda').style.display = "flex"
 
+    document.getElementById('sala0004').style.display = "none" // Essas três propriedades fazem os botões de cada sala sumirem antes de começar o jogo
+    document.getElementById('sala0002').style.display = "none"
+    document.getElementById('sala0003').style.display = "none"
+
     // document.getElementById('inventariogeral').style.display = "flex" // Para que o inventário apareça depois de iniciar o jogo
     // document.getElementById('inv0').style.display = "none" // Evita que os itens apareça antes de pegá-los
     
@@ -36,38 +40,50 @@ const filterNome = (lista) => {
         if (x === undefined) {
             return []
         } else {
-            if (xs.indexOf("/") != -1) {
+            if (xs.indexOf("/") != -1 || x == "/") { // Aqui ele vai tirar todas as barras
                 return [...helper(xs)]
-            } else {
+            } else if (xs.indexOf(".") != -1){ // Aqui ele vai tirar tudo depois do ponto
                 return [x, ...helper(xs)]
+            } else {
+                return [...helper(xs)]
             }
         }
     }
-    const listaAtual = lista.toString().split("")
+    listaAtual = lista.toString().split("")
     return helper(listaAtual)
 }
 
-const mudeImgSrc = (direcao, imagemEsq, imagemDir) => { //Altera a imagem principal
+
+
+const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual) => { //Altera a imagem principal e os botões
+    //Altera a imagem de fundo
     if (direcao =="esquerda")  { //Se o parametro direção for == esquerda, gere uma imagem com o src especificado
         img.src = imagemEsq; 
     } 
     else { // Se não for, gere uma imagem para o caso de ser == direita
        img.src = imagemDir;
    }
+   
+   //Altera os botões que acompanha
+   const proxSala = ("sala" + filterNome(img.src).reduce((acc, i) => acc + i))
+   
+   document.getElementById(("sala" + salaAtual)).style.display = "none"
+   document.getElementById(proxSala).style.display = "flex"
 }
 
 const background = (direcao) => { // Função para passar as imagens com click
     const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i)
-    // console.log(imagemAtual)
+    console.log(imagemAtual)
+    // console.log(filterNome(imagemAtual).reduce((acc, i) => acc + i))
 
-    if (imagemAtual == "/0001.png") {
-        mudeImgSrc(direcao, "./img/imgFundo/0004.png", "./img/imgFundo/0003.png")
-    } else if (imagemAtual == "/0002.png") {
-        mudeImgSrc(direcao, "./img/imgFundo/0003.png", "./img/imgFundo/0004.png")
-    } else if (imagemAtual == "/0003.png" ) {
-        mudeImgSrc(direcao, "./img/imgFundo/0001.png", "./img/imgFundo/0002.png")
-    } else if (imagemAtual == "/0004.png" ) {
-        mudeImgSrc(direcao, "./img/imgFundo/0002.png", "./img/imgFundo/0001.png")
+    if (imagemAtual == "0001" || imagemAtual == "0001-1") {
+        mudeImgSrc(direcao, "./img/imgFundo/0004.png", "./img/imgFundo/0003.png", imagemAtual)
+    } else if (imagemAtual == "0002") {
+        mudeImgSrc(direcao, "./img/imgFundo/0003.png", "./img/imgFundo/0004.png", imagemAtual)
+    } else if (imagemAtual == "0003" ) {
+        mudeImgSrc(direcao, "./img/imgFundo/0001.png", "./img/imgFundo/0002.png", imagemAtual)
+    } else if (imagemAtual == "0004" ) {
+        mudeImgSrc(direcao, "./img/imgFundo/0002.png", "./img/imgFundo/0001.png", imagemAtual)
     } 
 
 }
