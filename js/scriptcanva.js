@@ -16,9 +16,12 @@ const IniciarJogo = () => {
     document.getElementById('direita').style.display = "flex" 
     document.getElementById('esquerda').style.display = "flex"
 
+    document.getElementById('sala0001').style.display = "flex" 
     document.getElementById('sala0004').style.display = "none" // Essas três propriedades fazem os botões de cada sala sumirem antes de começar o jogo
     document.getElementById('sala0002').style.display = "none"
     document.getElementById('sala0003').style.display = "none"
+
+    document.getElementById('textoFinal').style.display = "none"
 
 
     // document.getElementById('inventariogeral').style.display = "flex" // Para que o inventário apareça depois de iniciar o jogo
@@ -34,6 +37,25 @@ const IniciarJogo = () => {
 
     img.src = "./img/imgFundo/0001.png";
     // inventario.src = "./img/inventario/inventario.png";
+}
+
+const verificarSenha = () => {
+    console.log(document.getElementById('senhaInput').value)
+    if (document.getElementById('senhaInput').value == 35728) {
+        console.log("Parabéns")
+
+
+        document.getElementById('textoFinal').style.display = "flex"
+        document.getElementById('controladorSenha').style.display = "none"
+        document.getElementById('direita').style.display = "none" 
+        document.getElementById('esquerda').style.display = "none"
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    } else {
+        document.getElementById('senhaInput').value = ""
+    }
 }
 
 const filterNome = (lista) => {
@@ -84,7 +106,7 @@ const background = (direcao) => { // Função para passar as imagens com click
         mudeImgSrc(direcao, "./img/imgFundo/0004.png", "./img/imgFundo/0003.png", imagemAtual)
     } else if (imagemAtual == "0002") {
         mudeImgSrc(direcao, "./img/imgFundo/0003.png", "./img/imgFundo/0004.png", imagemAtual)
-    } else if (imagemAtual == "0003" ) {
+    } else if (imagemAtual == "0003") {
         mudeImgSrc(direcao, "./img/imgFundo/0001.png", "./img/imgFundo/0002.png", imagemAtual)
     } else if (imagemAtual == "0004" ) {
         mudeImgSrc(direcao, "./img/imgFundo/0002.png", "./img/imgFundo/0001.png", imagemAtual)
@@ -125,12 +147,22 @@ const usarElementoINV = (posicao, idBotaoAntigo) => { // Função utilizada para
         document.getElementById('inv' + posicao + "Check").checked = 0 
     }
 }
+
 const trocaBotao = (idAtual,idAtual2, idProx, imgProx) => {//função para fazer os botões já clicados desaparecerem
     mudeImgSrc('esquerda', imgProx) 
 
     document.getElementById(idAtual).style.display = "none" // pegue o id atual e faça ele desaparecer, no caso, de um botão
     document.getElementById(idAtual2).style.display = "none"//faça o mesmo com o idAtual2
 
+    if (idAtual == "sala0002-2") {
+        document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
+    }
+
     document.getElementById(idProx).style.display = "flex"//faça o id do próximo elemento aparecer
 
 }
+
+document.getElementById('sala0001').style.display = "none" 
+document.getElementById('sala0004').style.display = "none" 
+document.getElementById('sala0002').style.display = "none"
+document.getElementById('sala0003').style.display = "none"
