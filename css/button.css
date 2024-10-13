@@ -16,6 +16,7 @@
     background: none;
     border: none ;
 }
+
 .bt_mov:hover{
 transform: scale(1.05);
 transition: transform 200ms ease-in-out;
@@ -27,10 +28,9 @@ transition: transform 200ms ease-in-out;
     
 }
 #direita{
-    left: 740px;
     top: 360px;
-    
 }
+
 #baixo{
     left: 380px;
     top: 750px;
