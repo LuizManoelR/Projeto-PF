@@ -20,6 +20,7 @@ const IniciarJogo = () => {
     document.getElementById('sala0002').style.display = "none"
     document.getElementById('sala0003').style.display = "none"
 
+
     // document.getElementById('inventariogeral').style.display = "flex" // Para que o inventário apareça depois de iniciar o jogo
     // document.getElementById('inv0').style.display = "none" // Evita que os itens apareça antes de pegá-los
     
@@ -55,7 +56,7 @@ const filterNome = (lista) => {
 
 
 
-const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual) => { //Altera a imagem principal e os botões
+const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual=0) => { //Altera a imagem principal e os botões
     //Altera a imagem de fundo
     if (direcao =="esquerda")  { //Se o parametro direção for == esquerda, gere uma imagem com o src especificado
         img.src = imagemEsq; 
@@ -66,14 +67,17 @@ const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual) => { //Altera a 
    
    //Altera os botões que acompanha
    const proxSala = ("sala" + filterNome(img.src).reduce((acc, i) => acc + i))
-   
-   document.getElementById(("sala" + salaAtual)).style.display = "none"
+   if (salaAtual != 0) {
+    document.getElementById(("sala" + salaAtual)).style.display = "none"
    document.getElementById(proxSala).style.display = "flex"
+
+   }
 }
 
 const background = (direcao) => { // Função para passar as imagens com click
+    
     const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i)
-    console.log(imagemAtual)
+    
     // console.log(filterNome(imagemAtual).reduce((acc, i) => acc + i))
 
     if (imagemAtual == "0001" || imagemAtual == "0001-1") {
@@ -121,6 +125,12 @@ const usarElementoINV = (posicao, idBotaoAntigo) => { // Função utilizada para
         document.getElementById('inv' + posicao + "Check").checked = 0 
     }
 }
+const trocaBotao = (idAtual,idAtual2, idProx, imgProx) => {//função para fazer os botões já clicados desaparecerem
+    mudeImgSrc('esquerda', imgProx) 
 
+    document.getElementById(idAtual).style.display = "none" // pegue o id atual e faça ele desaparecer, no caso, de um botão
+    document.getElementById(idAtual2).style.display = "none"//faça o mesmo com o idAtual2
 
-IniciarJogo()
+    document.getElementById(idProx).style.display = "flex"//faça o id do próximo elemento aparecer
+
+}
