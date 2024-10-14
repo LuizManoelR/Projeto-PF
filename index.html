@@ -1,20 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
 </head>
+
 <body>
-    <principal>
-        <p2>
-            <img id="imagemPrincipal" src="start.jpg">
-            <button id="start" onclick="IniciarJogos()">Start Game</button>
-            <button id="esquerda" onclick="VirarEsq()"><--</button>
-            <button id="direita" onclick="VirarDir()">--></button>
-        </p2>
-    </principal>
+    
+    <jogo>
+        <canvas id="jogoPrincipal" width="1280" height="720"></canvas>
+        
+        <button id="start" onclick="IniciarJogo()">START GAME </button>
+        
+        
+        <button style="display: none;" class='bt_mov' id="esquerda" onclick="background('esquerda')">
+            <img class ="imgbt" src="./img/interfaceUsuario/botao_esquerda.png" >
+        </button>
+        <button style="display: none;" class='bt_mov' id="direita" onclick="background()">
+            <img class ="imgbt" src="./img/interfaceUsuario/botao_direita.png"  > 
+        </button>
+        <button style="display: none;" class= "bt_mov" id="baixo" onclick="sair_inspecionar()">
+            <img class ="imgbt" src="./img/interfaceUsuario/botao_baixo.png">
+        </button>
+
+        <a style="display: none; top: 200px; left: 500px; height: 400px; width: 400px;color: white; font-family: Arial, Helvetica, sans-serif; font-size: xx-large;" id="textoFinal">Parabéns</a>
+        <div style="display: none; justify-content: center; align-items: center; top: 200px; left: 500px; height: 400px; width: 400px;  gap: 10px;" id="controladorSenha">
+            <input style="position: static; width: 120px; height: 50px; font-size:xx-large;" type="number" id="senhaInput" autocomplete="off" autofocus="on" min="0" max="99999">
+            <button style="position: static; width: 50px; height: 50px;" onclick="verificarSenha()">SEND</button> 
+        </div>
+        
+        <botoesZoom>
+            <div id="sala0001">
+                <!-- Botão para abrir o armario /0001.png-->
+                <button style="top: 170px; left: 650px; width: 110px; height: 250px;" class='bt_int' onclick="mudeImgSrc('esquerda', './img/imgFundo/0001-1.png')"></button>
+            </div>
+            <div id="sala0004">
+                <!-- Botão para zoom na gaveta /0004.png-->
+                <button style="top: 360px; left: 570px; width: 150px; height: 120px;" id= "sala0004-1" class='bt_int' onclick="trocaBotao('sala0004-1','sala0004-1','sala0004-2', './img/imgFundo/0004-1.png')"></button>
+                <!-- Botão para abrir a gaveta /0004.png-->
+                <button style="display: none;top: 450px; left: 420px; width: 500px; height: 300px;"id="sala0004-2" class='bt_int' onclick="trocaBotao('sala0004-2','sala0004-1','sala0004', './img/imgFundo/0004-2.png')"></button>
+            </div>
+            <div id="sala0002">
+                <!-- Botão para ler o bilhete  /0002.png-->
+                <button style="top: 280px; left: 565px; width: 80px; height: 55px; display: flex"  id= "sala0002-1" class='bt_int' onclick="trocaBotao('sala0002-1', 'sala0002-2','sala0002' ,'./img/imgFundo/0002-1.png')">
+                </button>
+                <!-- Botão para aproximar a porta  /0002.png-->
+                <button style="top: 230px; left: 670px; width: 250px; height: 200px; display: flex"  id= "sala0002-2" class='bt_int' onclick="trocaBotao('sala0002-2','sala0002-1','sala0002', ' ./img/imgFundo/0002-2.png')">
+                </button> 
+            </div>
+            <div id="sala0003">
+                <div id="sala0003-0">
+                <!-- Botão para aproximar ao quadro  /0003.png -->
+                <button style="top: 130px; left: 225px; width: 350px; height: 250px ;display: flex;" id= "sala0003-1" class='bt_int' onclick="trocaBotao('sala0003-1','sala0003-3','sala0003-2', './img/imgFundo/0003-1.png')">
+                </button>
+                <!-- Botão para olhar em baixo da cama  /0003.png -->
+                <button style="top: 460px; left: 850px; width: 370px; height: 200px; display: flex;"id="sala0003-3" class='bt_int' onclick="trocaBotao('sala0003-1','sala0003-3','sala0003', './img/imgFundo/0003-3.png')">
+                </button>
+                </div>
+                <!-- Botão para tirar o quadro  /0003.png -->
+                <button style="top: 30px; left: 150px; width: 1000px; height: 650px; display:none ;"id="sala0003-2" class='bt_int' onclick="mudeImgSrc('esquerda', './img/imgFundo/0003-2.png')">
+                </button>
+            </div>
+        </botoesZoom>
+
+        
+        <inventario id="inventariogeral"> <!-- Itens e Inventário -->
+            
+            <!-- Itens para adicionar ao inventário -->
+            <button id='fechadura' onclick="usarElementoINV(0, 'fechadura')"> 
+                <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="./img/inventario/start.jpg"/>
+            </button>
+            <button id='chave' onclick="atualizarElementoINV(0, 'chave')">
+                <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="./img/inventario/chave.png"/>
+            </button>
+            
+            <!-- Inventário em Si -->
+            <button class="btn_inventory">1 
+                <inv id="inv0">
+                    <img class="btn_inventory_semPadrao" src="./img/inventario/chave.png"/>
+                    <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(0)" id="inv0Check" style="opacity: 0%;">
+                </inv>
+            </button>
+            
+            <button class="btn_inventory" style="left: 256px;">2 
+                <inv id="inv1">
+                    <!-- <img class="btn_inventory_semPadrao" src=""/> Aqui você deve colocar os outros itens-->
+                    <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(1)" id="inv1Check" style="opacity: 0%;">
+                </inv>
+            </button>
+            
+            <button class="btn_inventory" style="left: 382px;">3 
+                <inv id="inv2">
+                    <!-- <img class="btn_inventory_semPadrao" src=""/> -->
+                    <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(2)" id="inv2Check" style="opacity: 0%;">
+                </inv>
+            </button>
+            
+            <button class="btn_inventory" style="left: 508px;">4 
+                <inv id="inv3">
+                    <!-- <img class="btn_inventory_semPadrao" src=""/> -->
+                    <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(3)" id="inv3Check" style="opacity: 0%;">
+                </inv>
+            </button>
+            
+        </inventario>
+
+    </jogo>
+    
+    
+    <script src="./js/scriptcanva.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/button.css">
+    
 </body>
+
 </html>
