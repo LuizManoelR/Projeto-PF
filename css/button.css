@@ -39,9 +39,11 @@ transition: transform 200ms ease-in-out;
 }
 
 #baixo{
-    left: 380px;
-    top: 750px;
+    left: 640px;
+    top: 650px;
+    z-index: 1;
 }
+
 .imgbt{
     width: 35px;
     left: 1px;

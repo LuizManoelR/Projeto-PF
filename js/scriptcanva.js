@@ -10,7 +10,6 @@ const IniciarJogo = () => {
     const inventario = new Image();
 
     document.getElementById('direita').style.left = (canvas.width - 60) + "px"
-    // document.getElementById('direita').style.top = (canvas.width - 60) + "px"
 
     document.getElementById("start").style.display = "none" 
     document.getElementById('direita').style.display = "flex" 
@@ -44,11 +43,11 @@ const verificarSenha = () => {
     if (document.getElementById('senhaInput').value == 35728) {
         console.log("Parabéns")
 
-
         document.getElementById('textoFinal').style.display = "flex"
         document.getElementById('controladorSenha').style.display = "none"
         document.getElementById('direita').style.display = "none" 
         document.getElementById('esquerda').style.display = "none"
+        document.getElementById('baixo').style.display = "none"
 
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -89,9 +88,14 @@ const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual=0) => { //Altera 
    
    //Altera os botões que acompanha
    const proxSala = ("sala" + filterNome(img.src).reduce((acc, i) => acc + i))
+   console.log(salaAtual)
    if (salaAtual != 0) {
-    document.getElementById(("sala" + salaAtual)).style.display = "none"
-   document.getElementById(proxSala).style.display = "flex"
+    if (salaAtual == "0001-1") {
+        document.getElementById(("sala" + "0001")).style.display = "none"
+    } else {
+        document.getElementById(("sala" + salaAtual)).style.display = "none"
+    }
+    document.getElementById(proxSala).style.display = "flex"
 
    }
 }
@@ -113,6 +117,37 @@ const background = (direcao) => { // Função para passar as imagens com click
     } 
 
 }
+
+const sair_inspecionar = () =>{
+    const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i)
+    console.log(imagemAtual)
+    document.getElementById('direita').style.display = "flex" 
+    document.getElementById('esquerda').style.display = "flex"
+    document.getElementById('baixo').style.display = "none"
+    img.src = 'img/imgFundo/0002.png'
+
+    if (imagemAtual == "0002-1" || imagemAtual == "0002-2") {
+        mudeImgSrc("esquerda", 'img/imgFundo/0002.png')
+        document.getElementById('sala0002-1').style.display = "flex"
+        document.getElementById('sala0002-2').style.display = "flex"
+        document.getElementById('sala0002').style.display = "flex"
+        document.getElementById('controladorSenha').style.display = "none"
+
+        
+    }  else if (imagemAtual == "0003-1" || imagemAtual == "0003-2" || imagemAtual == "0003-3") {
+        mudeImgSrc("esquerda", 'img/imgFundo/0003.png')
+        document.getElementById('sala0003-1').style.display = "flex"
+        document.getElementById('sala0003-3').style.display = "flex"
+        document.getElementById('sala0003-2').style.display = "none"
+
+    } else if (imagemAtual == "0004-1" || imagemAtual == "0004-2") {
+        mudeImgSrc("esquerda", 'img/imgFundo/0004.png')
+        document.getElementById('sala0004-1').style.display = "flex"
+        document.getElementById('sala0004-2').style.display = "none"
+    
+    } 
+}
+
 
 // Funções de Inventários
 const atualizarElementoINV = (posicao, idBotaoAntigo) => { // Atualiza o inventário com o item que o jogador acabou de pegar
@@ -159,7 +194,9 @@ const trocaBotao = (idAtual,idAtual2, idProx, imgProx) => {//função para fazer
     }
 
     document.getElementById(idProx).style.display = "flex"//faça o id do próximo elemento aparecer
-
+    document.getElementById("baixo").style.display = "flex"//faça o id do próximo elemento aparecer
+    document.getElementById("direita").style.display = "none"//faça o id do próximo elemento aparecer
+    document.getElementById("esquerda").style.display = "none"//faça o id do próximo elemento aparecer
 }
 
 document.getElementById('sala0001').style.display = "none" 
