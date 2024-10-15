@@ -204,15 +204,14 @@ const trocaBotao = (idAtual,idAtual2, idProx, imgProx) => {//função para fazer
 
 const trilha_sonora = () =>{ // da play no audio, ajusta seu volume e deixa em loop
 
-const audio = new Audio()
+    const audio = new Audio()
 
-audio.src = 'audio/trilhaSonora_1.mp3'
+    audio.src = './audio/trilhaSonora_1.MP3'
 
-audio.volume = 0.2
-audio.play()
+    audio.volume = 0.2
+    audio.play()
 
-audio.loop = true
-
+    audio.loop = true
 }
 
 document.getElementById('sala0001').style.display = "none" 
