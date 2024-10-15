@@ -7,22 +7,27 @@ const img = new Image(); //Constante para gerar uma imagem
 
 const IniciarJogo = () => {
     
+    ctx.font = "48px serif";
+    ctx.fillStyle = "White";
+    ctx.fillText("Carregando", 10, 50);
+    telaCarregamento()
+    
     const inventario = new Image();
-
+    
     document.getElementById('direita').style.left = (canvas.width - 60) + "px"
-
+    
     document.getElementById("start").style.display = "none" 
     document.getElementById('direita').style.display = "flex" 
     document.getElementById('esquerda').style.display = "flex"
-
+    
     document.getElementById('sala0001').style.display = "flex" 
     document.getElementById('sala0004').style.display = "none" // Essas três propriedades fazem os botões de cada sala sumirem antes de começar o jogo
     document.getElementById('sala0002').style.display = "none"
     document.getElementById('sala0003').style.display = "none"
-
+    
     document.getElementById('textoFinal').style.display = "none"
-
-
+    
+    
     // document.getElementById('inventariogeral').style.display = "flex" // Para que o inventário apareça depois de iniciar o jogo
     // document.getElementById('inv0').style.display = "none" // Evita que os itens apareça antes de pegá-los
     
@@ -31,13 +36,20 @@ const IniciarJogo = () => {
     }
     
     // inventario.onload = () => {
-    //     ctx.drawImage(inventario, canvas.width - 679, canvas.height - 170, canvas.width * 0.6, canvas.height * 0.15);
-    // }
-
-    img.src = "./img/imgFundo/0001.png";
-    // inventario.src = "./img/inventario/inventario.png";
-
-    trilha_sonora() // inicia a trilha sonora
+        //     ctx.drawImage(inventario, canvas.width - 679, canvas.height - 170, canvas.width * 0.6, canvas.height * 0.15);
+        // }
+        
+        // inventario.src = "./img/inventario/inventario.png";
+        img.src = "./img/imgFundo/0001.png";
+        trilha_sonora() // inicia a trilha sonora
+}
+    
+    const telaCarregamento = () => {
+        const listaImg = ["./img/imgFundo/0001.png","./img/imgFundo/0001-1.png", "./img/imgFundo/0002.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png", "./img/imgFundo/0003.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png", "./img/imgFundo/0004.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
+        listaImg.map((x) => {
+            const imagemPreload = new Image();
+            imagemPreload.src = x
+        })
 }
 
 const verificarSenha = () => {
@@ -90,7 +102,6 @@ const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual=0) => { //Altera 
    
    //Altera os botões que acompanha
    const proxSala = ("sala" + filterNome(img.src).reduce((acc, i) => acc + i))
-   console.log(salaAtual)
    if (salaAtual != 0) {
     if (salaAtual == "0001-1") {
         document.getElementById(("sala" + "0001")).style.display = "none"
