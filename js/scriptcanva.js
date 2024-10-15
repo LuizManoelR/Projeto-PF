@@ -36,6 +36,8 @@ const IniciarJogo = () => {
 
     img.src = "./img/imgFundo/0001.png";
     // inventario.src = "./img/inventario/inventario.png";
+
+    trilha_sonora() // inicia a trilha sonora
 }
 
 const verificarSenha = () => {
@@ -197,6 +199,20 @@ const trocaBotao = (idAtual,idAtual2, idProx, imgProx) => {//função para fazer
     document.getElementById("baixo").style.display = "flex"//faça o id do próximo elemento aparecer
     document.getElementById("direita").style.display = "none"//faça o id do próximo elemento aparecer
     document.getElementById("esquerda").style.display = "none"//faça o id do próximo elemento aparecer
+}
+
+
+const trilha_sonora = () =>{ // da play no audio, ajusta seu volume e deixa em loop
+
+const audio = new Audio()
+
+audio.src = 'audio/trilhaSonora_1.mp3'
+
+audio.volume = 0.2
+audio.play()
+
+audio.loop = true
+
 }
 
 document.getElementById('sala0001').style.display = "none" 
