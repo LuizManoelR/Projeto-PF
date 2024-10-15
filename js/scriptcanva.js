@@ -20,9 +20,9 @@ const IniciarJogo = () => {
     document.getElementById('direita').style.display = "flex" 
     document.getElementById('esquerda').style.display = "flex"
     
-    document.getElementById('sala0001').style.display = "flex" 
+    document.getElementById('sala0001').style.display = "none" 
     document.getElementById('sala0004').style.display = "none" // Essas três propriedades fazem os botões de cada sala sumirem antes de começar o jogo
-    document.getElementById('sala0002').style.display = "none"
+    document.getElementById('sala0002').style.display = "flex"
     document.getElementById('sala0003').style.display = "none"
     
     document.getElementById('textoFinal').style.display = "none"
@@ -40,7 +40,7 @@ const IniciarJogo = () => {
         // }
         
         // inventario.src = "./img/inventario/inventario.png";
-        img.src = "./img/imgFundo/0001.png";
+        img.src = "./img/imgFundo/0002.png";
         trilha_sonora() // inicia a trilha sonora
 }
     
