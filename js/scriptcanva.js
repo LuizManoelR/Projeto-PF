@@ -4,12 +4,11 @@ const ctx = canvas.getContext("2d");
 document.getElementById('inventariogeral').style.display = "none" // Evita que o inventário apareça antes de iniciar o jogo
 
 const img = new Image(); //Constante para gerar uma imagem
-
 const IniciarJogo = () => {
     
     ctx.font = "48px serif";
     ctx.fillStyle = "White";
-    ctx.fillText("Carregando", 10, 50);
+    ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50);
     telaCarregamento()
     
     const inventario = new Image();
@@ -26,6 +25,7 @@ const IniciarJogo = () => {
     document.getElementById('sala0003').style.display = "none"
     
     document.getElementById('textoFinal').style.display = "none"
+    document.getElementById('tutorial').style.display = "flex"
     
     
     // document.getElementById('inventariogeral').style.display = "flex" // Para que o inventário apareça depois de iniciar o jogo
@@ -41,12 +41,14 @@ const IniciarJogo = () => {
         
         // inventario.src = "./img/inventario/inventario.png";
         img.src = "./img/imgFundo/0002.png";
-        trilha_sonora() // inicia a trilha sonora
+    document.getElementById('sala0002-1').style.border = "solid 1px white"
+    document.getElementById('sala0002-2').style.border = "solid 1px white"
+    trilha_sonora() // inicia a trilha sonora
 }
     
     const telaCarregamento = () => {
         const listaImg = ["./img/imgFundo/0001.png","./img/imgFundo/0001-1.png", "./img/imgFundo/0002.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png", "./img/imgFundo/0003.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png", "./img/imgFundo/0004.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
-        listaImg.map((x) => {
+        listaImg.map((x,acc) => {
             const imagemPreload = new Image();
             imagemPreload.src = x
         })
@@ -201,6 +203,9 @@ const trocaBotao = (idAtual,idAtual2, idProx, imgProx) => {//função para fazer
 
     document.getElementById(idAtual).style.display = "none" // pegue o id atual e faça ele desaparecer, no caso, de um botão
     document.getElementById(idAtual2).style.display = "none"//faça o mesmo com o idAtual2
+    
+    document.getElementById('sala0002-1').style.border = "none"
+    document.getElementById('sala0002-2').style.border = "none"
 
     if (idAtual == "sala0002-2") {
         document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
@@ -229,3 +234,5 @@ document.getElementById('sala0001').style.display = "none"
 document.getElementById('sala0004').style.display = "none" 
 document.getElementById('sala0002').style.display = "none"
 document.getElementById('sala0003').style.display = "none"
+
+// IniciarJogo()
