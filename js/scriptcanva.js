@@ -140,11 +140,12 @@ const sair_inspecionar = () =>{
         document.getElementById('sala0002').style.display = "flex"
         document.getElementById('controladorSenha').style.display = "none" // Desaparece com o local para inserir a senha
 
-    }  else if (imagemAtual == "0003-1" || imagemAtual == "0003-2" || imagemAtual == "0003-3") {
+    }  else if (imagemAtual == "0003-1" || imagemAtual == "0003-2" || imagemAtual == "0003-3" || imagemAtual == "0003-4") {
         mudeImgSrc("esquerda", 'img/imgFundo/0003.png')
         document.getElementById('sala0003-1').style.display = "flex"
         document.getElementById('sala0003-3').style.display = "flex"
         document.getElementById('sala0003-2').style.display = "none"
+        document.getElementById('sala0003-4').style.display = "none"
 
     } else if (imagemAtual == "0004-1" || imagemAtual == "0004-2") {
         mudeImgSrc("esquerda", 'img/imgFundo/0004.png')
