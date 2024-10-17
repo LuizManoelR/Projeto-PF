@@ -34,7 +34,7 @@ const IniciarJogo = () => {
 
     document.getElementById('sala0002-1').style.border = "solid 1px white"
     document.getElementById('sala0002-2').style.border = "solid 1px white"
-    trilha_sonora() // inicia a trilha sonora
+    trilhasonora_1() // inicia a trilha sonora
 }
     
 const telaCarregamento = () => { // Função que cuida de carregar todas as imagens antes do jogo funcionar, importante para conexões mais lentas

@@ -1,14 +1,20 @@
-const trilha_sonora = () =>{ // da play no audio, ajusta seu volume e deixa em loop
+const play_track = (src) => (vol = 1) => (loop = false) => (state = 'play') =>{ // da play no audio, ajusta seu volume e deixa em loop
 
     const audio = new Audio()
 
-    audio.src = './audio/trilhaSonora_1.MP3'
+    audio.src = src
 
-    audio.volume = 0.2
-    audio.play()
-
-    audio.loop = true
+    audio.volume = vol
+    
+    if (state == 'play'){
+        audio.play()
+    }else audio.pause()
+    if (loop == true){audio.loop = true}
+    else audio.loop = false
+    
 }
+
+const trilhasonora_1 = play_track('audio/trilhaSonora_1.MP3')(0.4)(true)
 
 const filterNome = (lista) => {
     const helper = ([x, ...xs]) => {
