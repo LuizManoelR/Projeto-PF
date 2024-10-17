@@ -42,10 +42,25 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
     ctx.fillStyle = "White";
     ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
     const listaImg = ["./img/imgFundo/0001.png","./img/imgFundo/0001-1.png", "./img/imgFundo/0002.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png","./img/imgFundo/0002-3.png" ,"./img/imgFundo/0002-4.png","./img/imgFundo/0003.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png","./img/imgFundo/0003-4.png", "./img/imgFundo/0004.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
+    
+    const listaAudio = ['audio/effect_gaveta.MP3', 'audio/efeitos sonoros/effect_gaveta.MP3']
+
+    const listaVideo = []
+
     listaImg.map((x,acc) => {
         const imagemPreload = new Image(); // Cria um novo objeto img
         imagemPreload.src = x // Coloca essa novo objeto com src igual ao valor da lista
     })
+
+    listaAudio.map((x)=>{
+        const imagemPreload = new Audio()
+        imagemPreload.src = x
+    })
+
+    /*listaVideo.map((x)=>{  ainda em teste
+        const imagemPreload = new vide
+        imagemPreload.src = x
+    })*/
 }
 
 const verificarSenha = () => { // Função utilizada para o fim do jogo
@@ -117,7 +132,7 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     if (imagemAtual == "0002-2") {
         document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
     }
-    else if (idAtual == 'sala0004-2') {play_track('audio/effect_gaveta.MP3')(0.3)(false)('play')}
+    else if (idAtual == 'sala0004-2') {play_track('audio/efeitos sonoros/effect_gaveta.MP3')(0.3)(false)('play')}
 
     document.getElementById(idProx).style.display = "flex"//faça o id do próximo elemento aparecer
     document.getElementById("baixo").style.display = "flex"//faça o id do próximo elemento aparecer
