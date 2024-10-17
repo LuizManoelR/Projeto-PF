@@ -41,7 +41,7 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
     ctx.font = "48px serif";
     ctx.fillStyle = "White";
     ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
-    const listaImg = ["./img/imgFundo/0001.png","./img/imgFundo/0001-1.png", "./img/imgFundo/0002.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png", "./img/imgFundo/0003.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png", "./img/imgFundo/0004.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
+    const listaImg = ["./img/imgFundo/0001.png","./img/imgFundo/0001-1.png", "./img/imgFundo/0002.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png","./img/imgFundo/0002-3.png" ,"./img/imgFundo/0002-4.png","./img/imgFundo/0003.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png", "./img/imgFundo/0004.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
     listaImg.map((x,acc) => {
         const imagemPreload = new Image(); // Cria um novo objeto img
         imagemPreload.src = x // Coloca essa novo objeto com src igual ao valor da lista
@@ -133,12 +133,12 @@ const sair_inspecionar = () =>{
     document.getElementById('esquerda').style.display = "flex"
     document.getElementById('baixo').style.display = "none"
 
-    if (imagemAtual == "0002-1" || imagemAtual == "0002-2") { // Confere que imagem está sendo mostrada agora
+    if ((imagemAtual == "0002-1" || imagemAtual == "0002-2" )|| (imagemAtual == "0002-3" || imagemAtual == "0002-4")) { // Confere que imagem está sendo mostrada agora
         mudeImgSrc("esquerda", 'img/imgFundo/0002.png') // Muda para a imagem principal da sala
-        document.getElementById('sala0002-1').style.display = "flex" // Volta com os botões da sala
-        document.getElementById('sala0002-2').style.display = "flex"
-        document.getElementById('sala0002').style.display = "flex"
+        document.getElementById('sala0002-3').style.display = "flex" // Volta com os botões da sala
+        document.getElementById('sala0002-1,2').style.display = "flex"
         document.getElementById('controladorSenha').style.display = "none" // Desaparece com o local para inserir a senha
+    
 
     }  else if (imagemAtual == "0003-1" || imagemAtual == "0003-2" || imagemAtual == "0003-3" || imagemAtual == "0003-4") {
         mudeImgSrc("esquerda", 'img/imgFundo/0003.png')
