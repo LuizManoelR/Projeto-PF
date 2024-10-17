@@ -117,6 +117,7 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     if (imagemAtual == "0002-2") {
         document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
     }
+    else if (idAtual == 'sala0004-2') {play_track('audio/effect_gaveta.MP3')(0.3)(false)('play')}
 
     document.getElementById(idProx).style.display = "flex"//faça o id do próximo elemento aparecer
     document.getElementById("baixo").style.display = "flex"//faça o id do próximo elemento aparecer
