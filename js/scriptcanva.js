@@ -121,19 +121,19 @@ const background = (direcao) => { // Função para passar as imagens com click
 const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuida de sumir com os botões que estão na tela atualmente para aparecer os próximos botões
     // IdAtual = Botões que estão ATUAlMENTE sendo mostrados na tela
     // IdProx = Botões que devem ser os PRÓXIMOS a serem mostrados na tela
-    mudeImgSrc('esquerda', imgProx) 
     const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i)
     document.getElementById(idAtual).style.display = "none" // pegue o id atual e faça ele desaparecer, no caso, de um botão
     document.getElementById(idAtual2).style.display = "none" //faça o mesmo com o idAtual2
     
     document.getElementById('sala0002-1').style.border = "none"
     document.getElementById('sala0002-2').style.border = "none"
-
+    
     if (imagemAtual == "0002-2") {
         document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
     }
     else if (idAtual == 'sala0004-2') {play_track('audio/efeitos sonoros/effect_gaveta.MP3')(0.3)(false)('play')}
-
+    
+    mudeImgSrc('esquerda', imgProx) 
     document.getElementById(idProx).style.display = "flex"//faça o id do próximo elemento aparecer
     document.getElementById("baixo").style.display = "flex"//faça o id do próximo elemento aparecer
     document.getElementById("direita").style.display = "none"//faça o id do próximo elemento aparecer
