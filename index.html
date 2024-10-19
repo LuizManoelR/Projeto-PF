@@ -7,8 +7,9 @@
     <title>Escape da Mansão</title>
 </head>
 
-<body>
-    
+<body class = "bg">
+    <img id="bg" src="/css/background.jpg">
+
     <jogo>
         <canvas id="jogoPrincipal" width="1280" height="720"></canvas>
 
@@ -16,7 +17,13 @@
             <h2 style="color: white; width: 640px;top: 740px; left: 420px;">Use as setas para olhar ao redor</h1>
             <h2 style="color: white; width: 300px;top: 772px; left: 480px;">Clique para investigar</h1>
         </div>
-        <button id="start" onclick="IniciarJogo()">START GAME </button>
+        <button id="start" onclick="IniciarJogo()">
+
+            <img src="/img/interfaceUsuario/start.png" id="imgStart">
+        </button>
+       
+       
+       
         <img style="display: none;" class ="imgbt" id="preloadImg" src="">
         
         

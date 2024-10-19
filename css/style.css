@@ -17,5 +17,17 @@ body {
     height: 100vh;
     width: 100vh;
     height: 100vh; 
-    background-color: black;
+   background-color: black;
 }
+#bg{
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+}
+/*.bg{
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}*/ 
