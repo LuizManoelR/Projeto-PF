@@ -7,6 +7,29 @@
     <title>Paciente ZERO</title>
 </head>
 
+<body class="bg">
+    
+<jogo>
 
+    <canvas id="jogoPrincipal" width="1280" height="720"></canvas>
+   
+    <img style="display: none;" class ="imgbt" id="preloadImg" src="">
+     
+    <button style="display: flex;" class='bt_mov' id="esquerda" onclick="background('esquerda')">
+        <img class="imgbt" height="35px" width="35px" id="btn_esquerda" src="./img/interfaceUsuario/botao_esquerda.png" >
+    </button>
+    <button style="display: flex;" class='bt_mov' id="direita" onclick="background()">
+        <img class ="imgbt" height="35px" width="35px" id="btn_direita" src="./img/interfaceUsuario/botao_direita.png"  > 
+    </button>
+
+</jogo>
+
+<script src="./js/base.js"></script>
+<script src="./js/script-fase2.js"></script>
+<script src="./js/inventario.js"></script>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/button.css">
+
+</body>
 
 </html>

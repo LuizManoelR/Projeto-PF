@@ -43,7 +43,7 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
     ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
     const listaImg = ["./img/imgFundo/0001.png","./img/imgFundo/0001-1.png", "./img/imgFundo/0002.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png","./img/imgFundo/0002-3.png" ,"./img/imgFundo/0002-4.png","./img/imgFundo/0003.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png","./img/imgFundo/0003-4.png", "./img/imgFundo/0004.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
     
-    const listaAudio = ['audio/effect_gaveta.MP3', 'audio/efeitos sonoros/effect_gaveta.MP3']
+    const listaAudio = ['audio/efeitos sonoros/effect_gaveta.MP3']
 
     const listaVideo = []
 
@@ -121,7 +121,6 @@ const background = (direcao) => { // Função para passar as imagens com click
 const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuida de sumir com os botões que estão na tela atualmente para aparecer os próximos botões
     // IdAtual = Botões que estão ATUAlMENTE sendo mostrados na tela
     // IdProx = Botões que devem ser os PRÓXIMOS a serem mostrados na tela
-    const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i)
     const imagemProxima = filterNome(imgProx).reduce((acc, i) => acc + i)
     document.getElementById(idAtual).style.display = "none" // pegue o id atual e faça ele desaparecer, no caso, de um botão
     document.getElementById(idAtual2).style.display = "none" //faça o mesmo com o idAtual2
