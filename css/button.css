@@ -22,12 +22,13 @@
     display: flex;
     background: none;
     border: none ;
+    z-index: 1 ;
 }
 
 .bt_int {
     background: none;
     cursor: pointer;
-    border: none;
+    border: flex;
     
 }
 
