@@ -57,6 +57,7 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     document.getElementById("baixo").style.display = "flex"//faça o id do próximo elemento aparecer
     document.getElementById("direita").style.display = "none"//faça o id do próximo elemento aparecer
     document.getElementById("esquerda").style.display = "none"//faça o id do próximo elemento aparecer
+    
 }
 
 
@@ -67,7 +68,7 @@ const sair_inspecionar = () =>{
     document.getElementById('direita').style.display = "flex" // Faz aparecer os botões da direta e esquerda 
     document.getElementById('esquerda').style.display = "flex"
     document.getElementById('baixo').style.display = "none"
-
+    
     if (imagemAtual == "0002-1" || imagemAtual == "0002-2" || imagemAtual == "0002-3" ) { // Confere que imagem está sendo mostrada agora
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0002.png') // Muda para a imagem principal da sala
         document.getElementById('sala0002-1').style.display = "flex" // Volta com os botões da sala
@@ -82,7 +83,6 @@ const sair_inspecionar = () =>{
         document.getElementById('sala0003-3,4').style.display = "none"
         document.getElementById('sala0003-2').style.display = "flex"
         
-
     } else if (imagemAtual == "0004-1" || imagemAtual == "0004-2" || imagemAtual == "0004-3" ) {
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0004.png')
         document.getElementById('sala0004-1').style.display = "flex"
@@ -101,3 +101,4 @@ document.getElementById('sala0001').style.display = "none" // Faz com que o site
 document.getElementById('sala0002').style.display = "flex"
 document.getElementById('sala0003').style.display = "none"
 document.getElementById('sala0004').style.display = "none" 
+document.getElementById("pegarlanterna").style.display = "none"

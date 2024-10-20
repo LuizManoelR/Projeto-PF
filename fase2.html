@@ -21,8 +21,9 @@
     <button style="display: flex;" class='bt_mov' id="direita" onclick="background()">
         <img class ="imgbt" height="35px" width="35px" id="btn_direita" src="./img/interfaceUsuario/botao_direita.png"  > 
     </button>
-
-
+    <button>
+     </button>
+    
     <button style="display: none;" class= "bt_mov" id="baixo" onclick="sair_inspecionar()">
         <img class ="imgbt" id="btn_baixo" src="./img/interfaceUsuario/botao_baixo.png">
     </button>
@@ -56,6 +57,10 @@
         
             <button class="bt_int" style="width: 350px; height: 250px; left: 470px; top: 340px;" id='sala0003-2'
             onclick="inspecionar('sala0003-1','sala0003-2','sala0003-3,4','img/imgFundo/Fase2/0003-2.png')"></button>
+           
+            <button class="bt_int" style="width: 150px; height: 120px; top: 390px; left: 570px;" id='pegarlanterna'
+            onclick="inspecionar('sala0003-3,4','pegarlanterna','sala0003-4','img/imgFundo/Fase2/0003-3.png')"> </button>
+                
             
             <div id = 'sala0003-3,4' style="display: none;">
 
@@ -63,8 +68,9 @@
                 onclick="inspecionar('sala0003-3,4','sala0003-3,4','sala0003','img/imgFundo/Fase2/0003-3.png')"></button>
                 
                 <button class="bt_int" style="width: 480px; height: 160px; left: 420px; top: 560px; display:flex ;" id='sala0003-3'
-                onclick="inspecionar('sala0003-3,4','sala0003-3,4','sala0003','img/imgFundo/Fase2/0003-4.png')"></button>
-
+                onclick="inspecionar('sala0003-3,4','sala0003-3,4','pegarlanterna','img/imgFundo/Fase2/0003-4.png')"></button>
+                
+                
             </div>
 
         </div>
