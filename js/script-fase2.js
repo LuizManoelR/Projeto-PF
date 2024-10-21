@@ -27,7 +27,6 @@ const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual=0) => { //Altera 
         }
         document.getElementById(proxSala).style.display = "flex" // E aparece os botões da próxima tela
     }
-
 }
 
 const background = (direcao) => { // Função para passar as imagens com click
@@ -71,13 +70,16 @@ const sair_inspecionar = () =>{
     document.getElementById('direita').style.display = "flex" // Faz aparecer os botões da direta e esquerda 
     document.getElementById('esquerda').style.display = "flex"
     document.getElementById('baixo').style.display = "none"
+
+    console.log(imagemAtual)
     
-    if (imagemAtual == "0002-1" || imagemAtual == "0002-2" || imagemAtual == "0002-3" ) { // Confere que imagem está sendo mostrada agora
+    if (imagemAtual == "0002-1" || imagemAtual == "0002-2" || imagemAtual == "0002-3" || imagemAtual == "0002-1-2") { // Confere que imagem está sendo mostrada agora
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0002.png') // Muda para a imagem principal da sala
         document.getElementById('sala0002-1').style.display = "flex" // Volta com os botões da sala
 
         document.getElementById('sala0002-2').style.display = "flex" 
         document.getElementById('sala0002-3').style.display = "none" 
+        document.getElementById('lanternaQuadro').style.display = "none" 
         
 
     }  else if (imagemAtual == "0003-1" || imagemAtual == "0003-2" || imagemAtual == "0003-3" || imagemAtual == "0003-4") {
@@ -85,18 +87,27 @@ const sair_inspecionar = () =>{
         document.getElementById('sala0003-1').style.display = "flex"
         document.getElementById('sala0003-3,4').style.display = "none"
         document.getElementById('sala0003-2').style.display = "flex"
+        document.getElementById('pegarlanterna').style.display = "none" 
         
     } else if (imagemAtual == "0004-1" || imagemAtual == "0004-2" || imagemAtual == "0004-3" ) {
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0004.png')
         document.getElementById('sala0004-1').style.display = "flex"
         document.getElementById('sala0004-2').style.display = "flex"
         document.getElementById('sala0004-3').style.display = "none"
+        document.getElementById('madeiraPorta').style.display = "none"
     
-    } 
+    } else if (imagemAtual == "0004-4") {
+        mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0004-5.png')
+        document.getElementById('sala0004-1').style.display = "flex"
+        document.getElementById('sala0004-2').style.display = "flex"
+        document.getElementById('sala0004-3').style.display = "none"
+        document.getElementById('madeiraPorta').style.display = "none"
+    }
     else if (imagemAtual == '0001-1'){
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0001.png')
         document.getElementById('sala0001-1').style.display = "flex"
         document.getElementById('ponteiros').style.display = "none"
+        document.getElementById("machado").style.display = "flex"
     
     }
 }

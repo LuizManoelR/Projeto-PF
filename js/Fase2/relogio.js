@@ -16,10 +16,12 @@ const mouseMoveHandler = (id) => (e) => {
   
     const rotate1 = parseInt(document.getElementById("seta1").style.rotate)
     const rotate2 = parseInt(document.getElementById("seta2").style.rotate)
-    if (rotate2 > 31 && rotate2 < 50) {
+    console.log(rotate1)
+    if (rotate2 > -100 && rotate2 < -75) {
       console.log("isso aí")
-      if (rotate1 > -175 && rotate1 < -150) {
+      if (rotate1 > 85 && rotate1 < 95) {
         console.log("parabéns")
+        document.getElementById("machadoEstado").style.display = "flex"
         // document.removeEventListener("mousemove", mouseMoveHandler("seta2"), false);
         // document.removeEventListener("mousemove", mouseMoveHandler("seta1"), false);
         document.getElementById(id + "Check").checked = 0

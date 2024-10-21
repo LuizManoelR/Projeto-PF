@@ -29,11 +29,17 @@
     </button>
 
     <inspecionar>
-
+        
         <div id = 'sala0001'>
-
+            
             <button class="bt_int" style="width: 150px; height: 150px; left: 570px; top: 100px;" id='sala0001-1'
-            onclick="inspecionar('sala0001-1','sala0001-1','ponteiros','img/imgFundo/Fase2/0001-1.png')"></button>
+            onclick="inspecionar('sala0001-1','machado','ponteiros','img/imgFundo/Fase2/0001-1.png')"></button>
+            
+            <div id="machadoEstado" style="display: none;">
+                <button id='machado' onclick="atualizarElementoINV(0, 'machado')">
+                    <img class="btn_inventory" style="top: 300px;left: 595px; transform: scale(0.8);" src="./img/inventario/machadoINV.png"/>
+                </button>
+            </div>
 
             <div style="display: none;" id="ponteiros">
                 <div id="seta1" style="left: 453px; top: 170px; height: 400px; width: 400px; position: absolute; background: none;"> 
@@ -51,7 +57,9 @@
         <div id = 'sala0002'>
             
             <button class="bt_int" style="width: 200px; height: 270px; left: 770px; top: 160px;" id='sala0002-1'
-            onclick="inspecionar('sala0002-1','sala0002-2','sala0002','img/imgFundo/Fase2/0002-1.png')"></button>
+            onclick="inspecionar('sala0002-1','sala0002-2','lanternaQuadro','img/imgFundo/Fase2/0002-1.png')"></button>
+
+            <button class="bt_int" id='lanternaQuadro' style="display: none; position: absolute; top: 50px; left: 100px; width: 1100px; height: 600px;" onclick="usarElementoINV(1, 'lanternaQuadro')"></button>
             
             <button class="bt_int" style="width: 460px; height: 270px;top: 340px;" id='sala0002-2'
             onclick="inspecionar('sala0002-1','sala0002-2','sala0002-3','img/imgFundo/Fase2/0002-2.png')"></button>
@@ -69,9 +77,13 @@
             <button class="bt_int" style="width: 350px; height: 250px; left: 470px; top: 340px;" id='sala0003-2'
             onclick="inspecionar('sala0003-1','sala0003-2','sala0003-3,4','img/imgFundo/Fase2/0003-2.png')"></button>
            
-            <button class="bt_int" style="width: 150px; height: 120px; top: 390px; left: 570px;" id='pegarlanterna'
-            onclick="inspecionar('sala0003-3,4','pegarlanterna','sala0003-4','img/imgFundo/Fase2/0003-3.png')"> </button>
-                
+            <!-- <button class="bt_int" style="width: 150px; height: 120px; top: 390px; left: 570px;" id='pegarlanterna'
+            onclick="inspecionar('sala0003-3,4','pegarlanterna','sala0003-4','img/imgFundo/Fase2/0003-3.png')"> </button> -->
+
+            <div id="pegarlanterna" style="display: none; position: absolute; width: 500px; height: 250px; top: 300px; left: 400px;">
+                <button style="width: 100%; height: 100%;"  id='lanterna' onclick="atualizarElementoINV(1, 'lanterna')"></button>
+            </div>
+        
             
             <div id = 'sala0003-3,4' style="display: none;">
 
@@ -89,7 +101,9 @@
         <div id = 'sala0004'>
 
             <button class="bt_int" style="width: 270px; height: 400px; left: 510px; top: 160px;" id='sala0004-1'
-            onclick="inspecionar('sala0004-1','sala0004-2','sala0004','img/imgFundo/Fase2/0004-1.png')"></button>
+            onclick="inspecionar('sala0004-1','sala0004-2','madeiraPorta','img/imgFundo/Fase2/0004-1.png')"></button>
+
+            <button class="bt_int" id='madeiraPorta' style="display: none; position: absolute; top: 50px; left: 100px; width: 1100px; height: 600px;" onclick="usarElementoINV(0, 'madeiraPorta')"></button>
 
             <button class="bt_int" style="width: 310px;left: 970px; height: 320px;top: 340px;" id='sala0004-2'
             onclick="inspecionar('sala0004-1','sala0004-2','sala0004-3','img/imgFundo/Fase2/0004-2.png')"></button>
@@ -105,24 +119,21 @@
     <inventario id="inventariogeral"> <!-- Itens e Inventário -->
             
         <!-- Itens para adicionar ao inventário -->
-        <button id='fechadura' onclick="usarElementoINV(0, 'fechadura')"> 
+        <!-- <button id='fechadura' onclick="usarElementoINV(0, 'fechadura')"> 
             <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="./img/inventario/start.jpg"/>
-        </button>
-        <button id='chave' onclick="atualizarElementoINV(0, 'chave')">
-            <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="./img/inventario/chave.png"/>
-        </button>
+        </button> -->
         
         <!-- Inventário em Si -->
         <button class="btn_inventory">1 
-            <inv id="inv0">
-                <img class="btn_inventory_semPadrao" src="./img/inventario/chave.png"/>
+            <inv id="inv0" style="display: none;">
+                <img class="btn_inventory_semPadrao" src="./img/inventario/machadoINV.png"/>
                 <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(0)" id="inv0Check" style="opacity: 0%;">
             </inv>
         </button>
         
         <button class="btn_inventory" style="left: 256px;">2 
-            <inv id="inv1">
-                <!-- <img class="btn_inventory_semPadrao" src=""/> Aqui você deve colocar os outros itens-->
+            <inv id="inv1" style="display: none;">
+                <img class="btn_inventory_semPadrao" src="./img/inventario/lanternaINV.png"/>
                 <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(1)" id="inv1Check" style="opacity: 0%;">
             </inv>
         </button>

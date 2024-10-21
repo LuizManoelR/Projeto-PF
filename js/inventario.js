@@ -23,13 +23,19 @@ const usarElementoINV = (posicao, idBotaoAntigo) => { // Função utilizada para
     console.log(document.getElementById('inv' + posicao + "Check").checked)
     if (existeElementoINV(posicao) == 1) { // Verifica se o item existe
         if (document.getElementById('inv' + posicao + "Check").checked == 1) { // Verifica se o mesmo está selecionado 
-            document.getElementById(idBotaoAntigo).style.display = "none" // Some o item do ambiente 
-            document.getElementById('inv' + posicao).style.display = "none" // Some o item no inventário
-            console.log("Parabéns")
+            if (idBotaoAntigo == "madeiraPorta") {
+                mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0004-4.png')
+                document.getElementById(idBotaoAntigo).style.display = "none" // Some o item do ambiente 
+                document.getElementById('inv' + posicao).style.display = "none" // Some o item no inventário
+            } else if (idBotaoAntigo == "lanternaQuadro") {
+                mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0002-1-2.png')
+            }
         }
     } else { // Caso não possua o item (Isso precisa olhar quando estiver com mais itens)
         document.getElementById('inv' + posicao + "Check").checked = 0 
     }
 }
 
-document.getElementById('inventariogeral').style.display = "none" // Evita que o inventário apareça antes de iniciar o jogo
+// document.getElementById("inv1").style.display = "flex"
+document.getElementById('inv' + 0 + "Check").checked == 0
+document.getElementById('inv' + 1 + "Check").checked == 0

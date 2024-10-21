@@ -180,5 +180,6 @@ document.getElementById('sala0001').style.display = "none" // Faz com que o site
 document.getElementById('sala0004').style.display = "none" 
 document.getElementById('sala0002').style.display = "none"
 document.getElementById('sala0003').style.display = "none"
+document.getElementById('inventariogeral').style.display = "none" // Evita que o inventário apareça antes de iniciar o jogo
 
 // IniciarJogo()
