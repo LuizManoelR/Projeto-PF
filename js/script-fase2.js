@@ -57,6 +57,9 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     document.getElementById("baixo").style.display = "flex"//faça o id do próximo elemento aparecer
     document.getElementById("direita").style.display = "none"//faça o id do próximo elemento aparecer
     document.getElementById("esquerda").style.display = "none"//faça o id do próximo elemento aparecer
+    if (idProx == "ponteiros") {
+        comecarMove()
+    }
     
 }
 
@@ -93,6 +96,7 @@ const sair_inspecionar = () =>{
     else if (imagemAtual == '0001-1'){
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0001.png')
         document.getElementById('sala0001-1').style.display = "flex"
+        document.getElementById('ponteiros').style.display = "none"
     
     }
 }

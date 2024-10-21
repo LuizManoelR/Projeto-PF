@@ -33,7 +33,18 @@
         <div id = 'sala0001'>
 
             <button class="bt_int" style="width: 150px; height: 150px; left: 570px; top: 100px;" id='sala0001-1'
-            onclick="inspecionar('sala0001-1','sala0001-1','sala0001','img/imgFundo/Fase2/0001-1.png')"></button>
+            onclick="inspecionar('sala0001-1','sala0001-1','ponteiros','img/imgFundo/Fase2/0001-1.png')"></button>
+
+            <div style="display: none;" id="ponteiros">
+                <div id="seta1" style="left: 453px; top: 170px; height: 400px; width: 400px; position: absolute; background: none;"> 
+                    <input style="height:100px;width:100px;left: 150px; top: 0; position: absolute; opacity: 0%; z-index: 2;" type="checkbox" id="seta1Check">
+                    <img height="400px" width="400px" src="./img/Puzzle/puzzleHR/setaHR.png" >
+                </div>
+                <div id="seta2" style="left: 453px; top: 170px; height: 400px; width: 400px; position: absolute; rotate: 25deg;" > 
+                    <input style="height:100px;width:100px;left: 150px; top: 0; position: absolute;  opacity: 0%; z-index: 2;" type="checkbox" id="seta2Check">
+                    <img height="400px" width="400px" src="./img/Puzzle/puzzleHR/setaM.png">
+                </div> 
+            </div>
             
         </div>
         
@@ -136,6 +147,7 @@
 <script src="./js/base.js"></script>
 <script src="./js/script-fase2.js"></script>
 <script src="./js/inventario.js"></script>
+<script src="./js/Fase2/relogio.js"></script>
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/button.css">
 
