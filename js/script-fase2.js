@@ -61,9 +61,10 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
 const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuida de sumir com os botões que estão na tela atualmente para aparecer os próximos botões
     // IdAtual = Botões que estão ATUAlMENTE sendo mostrados na tela
     // IdProx = Botões que devem ser os PRÓXIMOS a serem mostrados na tela
+    const imgAtual = filterNome(img.src).reduce((acc, i) => acc + i)
     document.getElementById(idAtual).style.display = "none" // pegue o id atual e faça ele desaparecer, no caso, de um botão
     document.getElementById(idAtual2).style.display = "none" //faça o mesmo com o idAtual2
-    if (document.getElementById('machadoMadeira').style.display == "none") {
+    if (document.getElementById('machadoMadeira').style.display == "none" && imgAtual == '0004-1') {
          document.getElementById('controladorSenha').style.display = "flex" 
     }
 
