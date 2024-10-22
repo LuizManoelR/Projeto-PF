@@ -11,8 +11,6 @@ const IniciarJogo = () => {
     document.getElementById('sala0001').style.display = "none" // Essas três propriedades fazem o resto desaparecer
     document.getElementById('sala0004').style.display = "none" 
     document.getElementById('sala0003').style.display = "none"
-    
-    document.getElementById('textoFinal').style.display = "none" // Texto de fim de jogo não aparecer
     document.getElementById('tutorial').style.display = "flex" // Tudo involvendo tutorial deve aparecer no inicio
     
     // Essa fase não utiliza inventario, logo essas funções não serão usadas por enquanto
@@ -34,7 +32,7 @@ const IniciarJogo = () => {
 
     document.getElementById('sala0002-1').style.border = "solid 1px white"
     document.getElementById('sala0002-2').style.border = "solid 1px white"
-    trilhasonora_1() // inicia a trilha sonora
+    trilhasonora_1('play',0.4) // inicia a trilha sonora
 }
     
 const telaCarregamento = () => { // Função que cuida de carregar todas as imagens antes do jogo funcionar, importante para conexões mais lentas
@@ -43,7 +41,7 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
     ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
     const listaImg = ["./img/imgFundo/0001.png","./img/imgFundo/0001-1.png", "./img/imgFundo/0002.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png","./img/imgFundo/0002-3.png" ,"./img/imgFundo/0002-4.png","./img/imgFundo/0003.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png","./img/imgFundo/0003-4.png", "./img/imgFundo/0004.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
     
-    const listaAudio = ['audio/efeitos sonoros/effect_gaveta.MP3']
+    const listaAudio = ['audio/efeitos sonoros/effect_gaveta.MP3','audio/efeitos sonoros/porta.MP3']
 
     const listaVideo = []
 
@@ -65,16 +63,21 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
 
 const verificarSenha = () => { // Função utilizada para o fim do jogo
     if (document.getElementById('senhaInput').value == 35728) { // Verifica se o texto colocado é a senha correta
-
-        document.getElementById('textoFinal').style.display = "flex" // Faz aparecer o texto de parabéns
         document.getElementById('controladorSenha').style.display = "none" // Desaparece o local para colocar a senha 
         document.getElementById('direita').style.display = "none"  // Desaparece os botões
         document.getElementById('esquerda').style.display = "none"
         document.getElementById('baixo').style.display = "none"
-
+        trilhasonora_1()
         ctx.fillStyle = "black"; 
         ctx.fillRect(0, 0, canvas.width, canvas.height); // Pinta o fundo de preto na resolução total do canvas
-
+        
+        const porta = new Audio()
+        porta.src = 'audio/efeitos sonoros/porta.MP3'
+        porta.play()
+        porta.addEventListener('ended', () => {
+            
+            location.href = 'fase2.html';
+        })
     } else {
         document.getElementById('senhaInput').value = "" // Caso a senha esteja errado, apague o texto escrito pelo jogador
     }
@@ -128,6 +131,8 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     document.getElementById('sala0002-1').style.border = "none"
     document.getElementById('sala0002-2').style.border = "none"
     
+    console.log(imagemProxima)
+
     if (imagemProxima == "0002-2") {
         document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
     }
