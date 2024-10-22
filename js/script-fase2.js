@@ -49,7 +49,7 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
     ctx.fillStyle = "White";
     ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
     
-    const listaImg =["./img/imgFundo/Fase2/0001.png","./img/imgFundo/Fase2/0001-1.png","./img/imgFundo/Fase2/0002.png","./img/imgFundo/Fase2/0002-1.png","./img/imgFundo/Fase2/0002-1-2.png","./img/imgFundo/Fase2/0002-2.png","./img/imgFundo/Fase2/0002-3.png","./img/imgFundo/Fase2/0003.png","./img/imgFundo/Fase2/0003-1.png","./img/imgFundo/Fase2/0003-2.png","./img/imgFundo/Fase2/0003-3.png","./img/imgFundo/Fase2/0003-4.png","./img/imgFundo/Fase2/0020.png","./img/imgFundo/Fase2/0003-5.png","./img/imgFundo/Fase2/0003-6.png","./img/imgFundo/Fase2/0004.png","./img/imgFundo/Fase2/0004-1.png","./img/imgFundo/Fase2/0004-2.png","./img/imgFundo/Fase2/0004-3.png"]
+    const listaImg =["./img/imgFundo/Fase2/0001.png","./img/imgFundo/Fase2/0001-1.png","./img/imgFundo/Fase2/0002.png","./img/imgFundo/Fase2/0002-1.png","./img/imgFundo/Fase2/0002-1-2.png","./img/imgFundo/Fase2/0002-2.png","./img/imgFundo/Fase2/0002-3.png","./img/imgFundo/Fase2/0003.png","./img/imgFundo/Fase2/0003-2.png","./img/imgFundo/Fase2/0003-3.png","./img/imgFundo/Fase2/0003-4.png","./img/imgFundo/Fase2/0004.png","./img/imgFundo/Fase2/0004-1.png", "./img/imgFundo/Fase2/0004-1-madeira.png", "./img/imgFundo/Fase2/0004-madeira.png"]
     listaImg.map((x,acc) => {
         const imagemPreload = new Image(); // Cria um novo objeto img
         imagemPreload.src = x // Coloca essa novo objeto com src igual ao valor da lista

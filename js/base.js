@@ -23,7 +23,7 @@ const control_trilha= (id) => (state,vol) =>{
     }else audio.pause()
 }
 
- const trilhasonora_1 = control_trilha('trilhaSonora_1')
+const trilhasonora_1 = control_trilha('trilhaSonora_1')
 
 const trilhasonora_2 = control_trilha('trilhaSonora_2')
 

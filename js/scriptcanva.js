@@ -43,8 +43,6 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
     
     const listaAudio = ['audio/efeitos sonoros/effect_gaveta.MP3','audio/efeitos sonoros/porta.MP3']
 
-    const listaVideo = []
-
     listaImg.map((x,acc) => {
         const imagemPreload = new Image(); // Cria um novo objeto img
         imagemPreload.src = x // Coloca essa novo objeto com src igual ao valor da lista
@@ -54,11 +52,6 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
         const imagemPreload = new Audio()
         imagemPreload.src = x
     })
-
-    /*listaVideo.map((x)=>{  ainda em teste
-        const imagemPreload = new vide
-        imagemPreload.src = x
-    })*/
 }
 
 const verificarSenha = () => { // Função utilizada para o fim do jogo
