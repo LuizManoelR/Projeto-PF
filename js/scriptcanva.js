@@ -65,16 +65,21 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
 
 const verificarSenha = () => { // Função utilizada para o fim do jogo
     if (document.getElementById('senhaInput').value == 35728) { // Verifica se o texto colocado é a senha correta
-
-        document.getElementById('textoFinal').style.display = "flex" // Faz aparecer o texto de parabéns
         document.getElementById('controladorSenha').style.display = "none" // Desaparece o local para colocar a senha 
         document.getElementById('direita').style.display = "none"  // Desaparece os botões
         document.getElementById('esquerda').style.display = "none"
         document.getElementById('baixo').style.display = "none"
-
+        
         ctx.fillStyle = "black"; 
         ctx.fillRect(0, 0, canvas.width, canvas.height); // Pinta o fundo de preto na resolução total do canvas
-
+        trilhasonora_1('pause')
+        const porta = new Audio()
+        porta.src = 'audio/efeitos sonoros/porta.MP3'
+        porta.play()
+        porta.addEventListener('ended', (e) => {
+            
+            location.href = 'fase2.html';
+        })
     } else {
         document.getElementById('senhaInput').value = "" // Caso a senha esteja errado, apague o texto escrito pelo jogador
     }
@@ -130,7 +135,7 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     
     console.log(imagemProxima)
 
-    if (idProx == "0004-1") {
+    if (imagemProxima == "0002-2") {
         document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
     }
     else if (idAtual == 'sala0004-2') {play_track('audio/efeitos sonoros/effect_gaveta.MP3')(0.3)(false)('play')}

@@ -8,7 +8,8 @@ const play_track = (src) => (vol = 1) => (loop = false) => (state = 'play') =>{ 
     
     if (state == 'play'){
         audio.play()
-    }else audio.pause()
+    }
+    if (state == 'pause'){audio.pause()}
     if (loop == true){audio.loop = true}
     else audio.loop = false
     
