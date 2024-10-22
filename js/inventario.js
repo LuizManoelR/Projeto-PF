@@ -1,6 +1,7 @@
 // Funções de Inventários
 const atualizarElementoINV = (posicao, idBotaoAntigo) => { // Atualiza o inventário com o item que o jogador acabou de pegar
     if (posicao == 1) {
+        document.getElementById("gavetalanterna").style.display = "none"
         document.getElementById('tutorial').style.display = "flex"
     }
     document.getElementById(idBotaoAntigo).style.display = "none" // Some o item do ambiente 
@@ -32,6 +33,8 @@ const usarElementoINV = (posicao, idBotaoAntigo) => { // Função utilizada para
                 document.getElementById('madeiraPorta1').style.display = "none" // Some a madeira da porta
                 document.getElementById('madeiraPorta2').style.display = "none" // Some a madeira da porta
                 document.getElementById('controladorSenha').style.display = "flex" // Aparece o controladorSenha
+            } if (idBotaoAntigo == "lanterna") {
+                document.getElementById(idBotaoAntigo) = none
             } else if (idBotaoAntigo == "lanternaQuadro") {
                 mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0002-1-2.png') // Caso ele use a lanterna no quadro, mude a imagem
             }
