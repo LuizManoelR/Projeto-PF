@@ -62,13 +62,14 @@ transition: transform 200ms ease-in-out;
     width: 90px;
     height: 90px;
     border: none;
-    top: 649px;
-    left: 130px;
+    top: 555px;
+    left: 475px;
     border: none;
     background: none;
     color: white;
     padding: 2px;
 }
+
 
 .btn_inventory_semPadrao{
     display: flex;
@@ -80,4 +81,11 @@ transition: transform 200ms ease-in-out;
     color: white;
     padding: 2px;
     transform: scale(0.8)
+}
+
+#img_inv{
+
+    width: 420px;
+    left: 445px;
+    top: 530px;
 }
