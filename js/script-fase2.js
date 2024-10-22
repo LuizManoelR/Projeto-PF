@@ -64,7 +64,9 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     const imgAtual = filterNome(img.src).reduce((acc, i) => acc + i)
     document.getElementById(idAtual).style.display = "none" // pegue o id atual e faça ele desaparecer, no caso, de um botão
     document.getElementById(idAtual2).style.display = "none" //faça o mesmo com o idAtual2
-    if (document.getElementById('machadoMadeira').style.display == "none" && imgAtual == '0004-1') {
+    console.log(document.getElementById('madeiraPorta1').style.display)
+    console.log(imgAtual)
+    if (document.getElementById('madeiraPorta1').style.display == "none" && imgAtual == '0004') {
          document.getElementById('controladorSenha').style.display = "flex" 
     }
 
@@ -128,6 +130,7 @@ const verificarSenha = () => { // Função utilizada para o fim do jogo
         document.getElementById('esquerda').style.display = "none"
         document.getElementById('baixo').style.display = "none"
         document.getElementById('inventariogeral').style.display = "none"
+        document.getElementById('madeiraPorta').style.display = "none"
 
         ctx.fillStyle = "black"; 
         ctx.fillRect(0, 0, canvas.width, canvas.height); // Pinta o fundo de preto na resolução total do canvas

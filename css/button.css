@@ -28,7 +28,7 @@
 .bt_int {
     background: none;
     cursor: pointer;
-    border: flex;
+    border: none;
     
 }
 
@@ -64,7 +64,6 @@ transition: transform 200ms ease-in-out;
     border: none;
     top: 555px;
     left: 475px;
-    border: none;
     background: none;
     color: white;
     padding: 2px;
@@ -75,7 +74,6 @@ transition: transform 200ms ease-in-out;
     display: flex;
     width: 90px;
     height: 90px;
-    border: none;
     border: none;
     background: none;
     color: white;
