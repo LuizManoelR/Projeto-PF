@@ -37,7 +37,7 @@
             
             <div id="machadoEstado" style="display: none;">
                 <button id='machado' onclick="atualizarElementoINV(0, 'machado')">
-                    <img class="btn_inventory" style="top: 300px;left: 595px; transform: scale(0.8);" src="./img/inventario/machadoINV.png"/>
+                    <img id='machadoMadeira' class="btn_inventory" style="top: 300px;left: 595px; transform: scale(0.8); display: flex;" src="./img/inventario/machadoINV.png"/>
                 </button>
             </div>
 
@@ -100,10 +100,21 @@
 
         <div id = 'sala0004'>
 
-            <button class="bt_int" style="width: 270px; height: 400px; left: 510px; top: 160px;" id='sala0004-1'
-            onclick="inspecionar('sala0004-1','sala0004-2','madeiraPorta','img/imgFundo/Fase2/0004-1.png')"></button>
+            <button  class="bt_int" style="width: 270px; height: 400px; left: 510px; top: 160px; border: none;" id='sala0004-1'
+            onclick="inspecionar('sala0004-1','sala0004-2','madeiraPorta','img/imgFundo/Fase2/0004-1.png')">
+                <img id="madeiraPorta2" style="left: 0; top: 0; display: flex;" height="100%" width="100%" src="./img/imgFundo/Fase2/0004-madeira.png" >
+            </button>
 
-            <button class="bt_int" id='madeiraPorta' style="display: none; position: absolute; top: 50px; left: 100px; width: 1100px; height: 600px;" onclick="usarElementoINV(0, 'madeiraPorta')"></button>
+            <button class="bt_int" id='madeiraPorta' style="display: none; position: absolute; left: 100px; width: 1100px; height: 720px;" onclick="usarElementoINV(0, 'madeiraPorta')">
+                <img id="madeiraPorta1" style="left: 0; top: 0; display: flex;" height="100%" width="100%" src="./img/imgFundo/Fase2/0004-1-madeira.png" >
+            </button>
+
+            <a style="display: none; top: 200px; left: 500px; height: 400px; width: 400px;color: white; font-family: Arial, Helvetica, sans-serif; font-size: xx-large;" id="textoFinal">Parabéns</a>
+            <div style="display: none; justify-content: center; align-items: center; left: 440px; height: 400px; width: 400px;  gap: 10px;" id="controladorSenha">
+                <h2 style="color: rgb(0, 0, 0); top: 140px;width: 170px;left: 400; font-size: 18px;">Digite a senha</h2>
+                <input style="position: static; width: 120px; height: 50px; font-size:xx-large;" type="number" id="senhaInput" autocomplete="off" autofocus="on" min="0" max="99999">
+                <button style="position: static; width: 50px; height: 50px;" onclick="verificarSenha()">SEND</button> 
+            </div>
 
             <button class="bt_int" style="width: 310px;left: 970px; height: 320px;top: 340px;" id='sala0004-2'
             onclick="inspecionar('sala0004-1','sala0004-2','sala0004-3','img/imgFundo/Fase2/0004-2.png')"></button>

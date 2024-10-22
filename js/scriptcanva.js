@@ -128,7 +128,9 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     document.getElementById('sala0002-1').style.border = "none"
     document.getElementById('sala0002-2').style.border = "none"
     
-    if (imagemProxima == "0002-2") {
+    console.log(imagemProxima)
+
+    if (idProx == "0004-1") {
         document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
     }
     else if (idAtual == 'sala0004-2') {play_track('audio/efeitos sonoros/effect_gaveta.MP3')(0.3)(false)('play')}

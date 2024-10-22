@@ -24,9 +24,12 @@ const usarElementoINV = (posicao, idBotaoAntigo) => { // Função utilizada para
     if (existeElementoINV(posicao) == 1) { // Verifica se o item existe
         if (document.getElementById('inv' + posicao + "Check").checked == 1) { // Verifica se o mesmo está selecionado 
             if (idBotaoAntigo == "madeiraPorta") {
-                mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0004-4.png')
                 document.getElementById(idBotaoAntigo).style.display = "none" // Some o item do ambiente 
                 document.getElementById('inv' + posicao).style.display = "none" // Some o item no inventário
+                document.getElementById('machadoMadeira').style.display = "none" // Some o item no inventário
+                document.getElementById('madeiraPorta1').style.display = "none" // Some o item no inventário
+                document.getElementById('madeiraPorta2').style.display = "none" // Some o item no inventário
+                document.getElementById('controladorSenha').style.display = "flex" // Some o item no inventário
             } else if (idBotaoAntigo == "lanternaQuadro") {
                 mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0002-1-2.png')
             }
