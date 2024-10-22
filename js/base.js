@@ -15,7 +15,14 @@ const play_track = (src) => (vol = 1) => (loop = false) => (state = 'play') =>{ 
     
 }
 
-const trilhasonora_1 = play_track('audio/trilhaSonora_1.MP3')(0.4)(true)
+const trilhasonora_1 = (state,vol) =>{
+    const audio = document.getElementById('trilhaSonora_1')
+    
+    if (state == 'play'){
+        audio.volume = vol
+        audio.play()
+    }else audio.pause()
+}
 
 const trilhasonora_2 = play_track('audio/trilhaSonora_2.MP3')(0.4)(true)
 
