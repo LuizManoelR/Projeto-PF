@@ -34,6 +34,7 @@ const mouseMoveHandler = (id) => (e) => {
       ctx.beginPath()
       ctx.moveTo(400, 400)
       ctx.lineTo(paddleX2 + 400, paddleY2 + 400)
+
       const inc = Math.atan((paddleY2)/(paddleX2)) * (180/Math.PI) + 90 // Faz o cálculo do coeficiente angular entre esses dois pontos, transforma em graus e corrige para a posição correta
       if (paddleX2 >= 0){ // Caso o mouse está na posição da direita
         document.getElementById(id).style.rotate = inc + "deg"
@@ -43,10 +44,7 @@ const mouseMoveHandler = (id) => (e) => {
     }
   }
 
-const comecarMove = () => {
-    document.getElementById("seta1Check").checked = 0 // Coloca como certeza que os botões select da seta estão desativados antes de começar a movimentação
-    document.getElementById("seta2Check").checked = 0
-      
+const comecarMove = () => {      
     document.addEventListener("mousemove", mouseMoveHandler("seta2"), false); // Cria um "escutador de evento", ou seja, ele percebe todas alterações em um evento e reproduz uma função
     document.addEventListener("mousemove", mouseMoveHandler("seta1"), false); // Nesse caso, ele pega a movimentação do mouse e adiciona uma função com o argumento "seta1" e "seta2", respectivos div no html
 }
