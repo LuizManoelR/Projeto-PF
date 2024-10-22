@@ -106,7 +106,7 @@ const sair_inspecionar = () =>{
     } else if (imagemAtual == "0004-1" || imagemAtual == "0004-2" || imagemAtual == "0004-3" ) {
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0004.png')
         document.getElementById('sala0004-1').style.display = "flex"
-        document.getElementById('sala0004-2').style.display = "flex"
+        // document.getElementById('sala0004-2').style.display = "flex"
         document.getElementById('sala0004-3').style.display = "none"
         document.getElementById('madeiraPorta').style.display = "none"
         document.getElementById('controladorSenha').style.display = "none"
