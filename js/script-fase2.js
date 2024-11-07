@@ -1,6 +1,5 @@
 const canvas = document.getElementById("fase2");
 const ctx = canvas.getContext("2d");
-document.getElementById('direita').style.left = (canvas.width - 60) + "px" 
 const img = new Image()
 
 trilhasonora_2('play',0.4)

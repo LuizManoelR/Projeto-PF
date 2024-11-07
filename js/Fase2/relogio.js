@@ -13,6 +13,7 @@ const mouseMoveHandler = (id) => (e) => {
         return (relativeY - canvas.height / 2)
       }
     }
+   
   
     const rotate1 = parseInt(document.getElementById("seta1").style.rotate) // Transforma em número as rotações
     const rotate2 = parseInt(document.getElementById("seta2").style.rotate)
@@ -27,15 +28,19 @@ const mouseMoveHandler = (id) => (e) => {
       }
     } 
     if (document.getElementById(id + "Check").checked == 1 ){
-      const paddleX2 = movimX() // Recebe as cordenadas 
-      const paddleY2 = movimY()
+      const paddleX2 = movimX() - 80 // Recebe as cordenadas 
+      const paddleY2 = movimY() + 95
+
+      console.log(paddleX2)
       
       // Desenha uma linha reta do ponto central até o ponteiro do mouse
       ctx.beginPath()
-      ctx.moveTo(400, 400)
-      ctx.lineTo(paddleX2 + 400, paddleY2 + 400)
+      ctx.moveTo("650", "365")
+      // ctx.lineTo(paddleX2 + 200, paddleY2 + 200)
+      ctx.lineTo(paddleX2 + 600, paddleY2 + 600)
+      // ctx.stroke();
 
-      const inc = Math.atan((paddleY2)/(paddleX2)) * (180/Math.PI) + 90 // Faz o cálculo do coeficiente angular entre esses dois pontos, transforma em graus e corrige para a posição correta
+      const inc = Math.atan((paddleY2 )/(paddleX2)) * (180/Math.PI) + 90 // Faz o cálculo do coeficiente angular entre esses dois pontos, transforma em graus e corrige para a posição correta
       if (paddleX2 >= 0){ // Caso o mouse está na posição da direita
         document.getElementById(id).style.rotate = inc + "deg"
       } else { // Caso o mouse está na posição da esquerda

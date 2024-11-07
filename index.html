@@ -7,21 +7,22 @@
     <title>Paciente ZERO</title>
 </head>
 
-<body class = "bg">
-    <img id="bg" src="/css/background.jpg">
+<body class="bg" style="height: 100vh; width: 100vw; overflow: hidden">
+    
+    <jogo class="bg1" style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;">
+        <img id="bg" style="width: 80vw; height: 90vh;" src="./css/background.jpg">
+        <canvas id="jogoPrincipal" width="1280" height="720" style="width: 80vw; height: 90vh;"></canvas>
 
-    <jogo>
-        <canvas id="jogoPrincipal" width="1280" height="720"></canvas>
+        <audio id= 'trilhaSonora_1' src="audio/trilhaSonora_1.MP3" style="display: none; "></audio>
 
-        <audio id= 'trilhaSonora_1' src="audio/trilhaSonora_1.MP3" style="display: none;"></audio>
-
-        <div style="display: none;" id="tutorial">
-            <h2 style="color: white; width: 640px;top: 740px; left: 420px;">Use as setas para olhar ao redor</h1>
-            <h2 style="color: white; width: 300px;top: 772px; left: 480px;">Clique para investigar</h1>
+        <div id="tutorial"> <!-- Tutorial de Baixo -->        
+            <p style="width: 80vw;"> Use as setas para olhar ao redor e clique para investigar</p>
+            <!-- <h2 style="width: 640px; ">Use as setas para olhar ao redore</h2>
+            <h2 style="width: 300px; left: 400px;">Clique para investigar</h2> -->
         </div>
 
         <button id="start" onclick="IniciarJogo()">
-            <img src="/img/interfaceUsuario/start.png" id="imgStart">
+            <img src="./img/interfaceUsuario/start.png" id="imgStart">
         </button>
        
         <img style="display: none;" class ="imgbt" id="preloadImg" src="">
@@ -37,7 +38,7 @@
             <img class ="imgbt" id="btn_baixo" src="./img/tutorial/botao_baixo_brilho.png">
         </button>
 
-        <div style="display: none; justify-content: center; align-items: center; top: 200px; left: 500px; height: 400px; width: 400px;  gap: 10px;" id="controladorSenha">
+        <div style="display: none; justify-content: center; align-items: center; top: 30vh; left: 38vw; height: 45vh; width: 30vw;  gap: 10px;" id="controladorSenha">
             <h2 style="color: rgb(0, 0, 0); top: 140px;width: 170px;left: 400; font-size: 18px;">Digite a senha</h2>
             <input style="position: static; width: 120px; height: 50px; font-size:xx-large;" type="number" id="senhaInput" autocomplete="off" autofocus="on" min="0" max="99999">
             <button style="position: static; width: 50px; height: 50px;" onclick="verificarSenha()">SEND</button> 
@@ -46,47 +47,46 @@
         <botoesZoom>
             <div id="sala0001">
                 <!-- Botão para abrir o armario /0001.png-->
-                <button style="top: 170px; left: 650px; width: 110px; height: 250px;" id="sala0001-1" class='bt_int' onclick="mudeImgSrc('esquerda', './img/imgFundo/0001-1.png')"></button>
+                <button style="top: -24vh; left: -0.5vw; width: 9vw; height: 32vh;" id="sala0001-1" class='bt_int' onclick="mudeImgSrc('esquerda', './img/imgFundo/0001-1.png')"></button>
             </div>
             <div id="sala0004">
                 <!-- Botão para zoom na gaveta /0004.png-->
-                <button style="top: 360px; left: 570px; width: 150px; height: 120px;" id= "sala0004-1" class='bt_int' onclick="inspecionar('sala0004-1','sala0004-1','sala0004-2', './img/imgFundo/0004-1.png')"></button>
+                <button style="top: 1vh; left:-5vw; width: 11vw; height: 12vh;" id= "sala0004-1" class='bt_int' onclick="inspecionar('sala0004-1','sala0004-1','sala0004-2', './img/imgFundo/0004-1.png')"></button>
                 <!-- Botão para abrir a gaveta /0004.png-->
-                <button style="display: none;top: 450px; left: 420px; width: 500px; height: 300px;"id="sala0004-2" class='bt_int' onclick="inspecionar('sala0004-2','sala0004-1','sala0004', './img/imgFundo/0004-2.png')"></button>
+                <button style="display: none;top: 5vh; left: -17vw; width: 38vw; height: 40vh;"id="sala0004-2" class='bt_int' onclick="inspecionar('sala0004-2','sala0004-1','sala0004', './img/imgFundo/0004-2.png')"></button>
             </div>
             <div id="sala0002">
-                
                 <div id= "sala0002-1,2" >
                     <!-- Botão para ler o bilhete  /0002.png-->
-                    <button style="top: 280px; left: 565px; width: 80px; height: 55px; display: flex"  id= "sala0002-1" class='bt_int' onclick="inspecionar('sala0002-3', 'sala0002-1,2','sala0002' ,'./img/imgFundo/0002-1.png')">
+                    <button style="top: -10vh; left: -5vw; width: 5.5vw; height: 7vh; display: flex"  id= "sala0002-1" class='bt_int' onclick="inspecionar('sala0002-3', 'sala0002-1,2','sala0002' ,'./img/imgFundo/0002-1.png')">
                     </button>
                     <!-- Botão para aproximar a porta  /0002.png-->
-                    <button style="top: 230px; left: 670px; width: 250px; height: 200px; display: flex"  id= "sala0002-2" class='bt_int' onclick="inspecionar('sala0002-1,2','sala0002-3','sala0002', ' ./img/imgFundo/0002-2.png')">
+                    <button style="top: -15vh; left: 2vw; width: 15vw; height: 20vh; display: flex"  id= "sala0002-2" class='bt_int' onclick="inspecionar('sala0002-1,2','sala0002-3','sala0002', ' ./img/imgFundo/0002-2.png')">
                     </button> 
                 </div>
                 <!-- Botão para aproximar a cama  /0002.png-->
-                <button style="top: 400px; left: 85px; width: 250px; height: 290px; display: flex"  id= "sala0002-3" class='bt_int' onclick="inspecionar('sala0002-3','sala0002-1,2','sala0002-4', ' ./img/imgFundo/0002-3.png')">
+                <button style="top: 15vh; left:-35vw; width: 18vw; height: 25vh; display: flex"  id= "sala0002-3" class='bt_int' onclick="inspecionar('sala0002-3','sala0002-1,2','sala0002-4', ' ./img/imgFundo/0002-3.png')">
                 </button> 
                  <!-- Botão para puxar o bilete da cama  /0002.png -->
-                 <button style="top: 400px; left: 500px; width: 300px; height: 200px; display: none;"id="sala0002-4" class='bt_int' onclick="inspecionar('sala0002-3','sala0002-4','sala0002', './img/imgFundo/0002-4.png')">
+                 <button style="top: 5vh; left: -7vw; width: 32vh; height: 20vh; display: none;"id="sala0002-4" class='bt_int' onclick="inspecionar('sala0002-3','sala0002-4','sala0002', './img/imgFundo/0002-4.png')">
                 </button>
  
             </div>
             <div id="sala0003">
                 <div id="sala0003-0">
                 <!-- Botão para aproximar ao quadro  /0003.png -->
-                <button style="top: 130px; left: 225px; width: 350px; height: 250px ;display: flex;" id= "sala0003-1" class='bt_int' onclick="inspecionar('sala0003-1','sala0003-3','sala0003-2', './img/imgFundo/0003-1.png')">
+                <button style="top: -27vh; left: -27vw; width: 24vw; height: 30vh;display: flex;" id= "sala0003-1" class='bt_int' onclick="inspecionar('sala0003-1','sala0003-3','sala0003-2', './img/imgFundo/0003-1.png')">
+                </button>
+                <!-- Botão para tirar o quadro  /0003.png -->
+                <button style="top: -40vh; left: -31vw; width: 63vw; height: 80vh; display:none ;"id="sala0003-2" class='bt_int' onclick="mudeImgSrc('esquerda', './img/imgFundo/0003-2.png')">
                 </button>
                 <!-- Botão para olhar em baixo da cama  /0003.png -->
-                <button style="top: 460px; left: 850px; width: 370px; height: 200px; display: flex;"id="sala0003-3" class='bt_int' onclick="inspecionar('sala0003-1','sala0003-3','sala0003-4', './img/imgFundo/0003-3.png')">
+                <button style="top: 20vh; left: 12vw; width: 29vw; height: 15vh; display: flex;"id="sala0003-3" class='bt_int' onclick="inspecionar('sala0003-1','sala0003-3','sala0003-4', './img/imgFundo/0003-3.png')">
                 </button>
                 <!-- Botão para puxar o bilete da cama  /0003.png -->
-                <button style="top: 400px; left: 500px; width: 300px; height: 200px; display: none;"id="sala0003-4" class='bt_int' onclick="inspecionar('sala0003-3','sala0003-4','sala0003', './img/imgFundo/0003-4.png')">
+                <button style="top: 5vh; left: -7vw; width: 32vh; height: 20vh; display: none;"id="sala0003-4" class='bt_int' onclick="inspecionar('sala0003-3','sala0003-4','sala0003', './img/imgFundo/0003-4.png')">
                 </button>
                 </div>
-                <!-- Botão para tirar o quadro  /0003.png -->
-                <button style="top: 30px; left: 150px; width: 1000px; height: 650px; display:none ;"id="sala0003-2" class='bt_int' onclick="mudeImgSrc('esquerda', './img/imgFundo/0003-2.png')">
-                </button>
             </div>
         </botoesZoom>
     </jogo>

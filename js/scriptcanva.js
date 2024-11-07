@@ -1,7 +1,7 @@
 const IniciarJogo = () => {
     telaCarregamento() // Puxa a tela de carregamento
-    
-    document.getElementById('direita').style.left = (canvas.width - 60) + "px" // Para a posição da seta direita ser dinamica de acordo com o tamanho do canvas
+
+    // document.getElementById('direita').style.left = (canvas.width - 60) + "px" // Para a posição da seta direita ser dinamica de acordo com o tamanho do canvas
     
     document.getElementById("start").style.display = "none"
     document.getElementById('direita').style.display = "flex" 
@@ -151,6 +151,7 @@ const sair_inspecionar = () =>{
         mudeImgSrc("esquerda", 'img/imgFundo/0002.png') // Muda para a imagem principal da sala
         document.getElementById('sala0002-3').style.display = "flex" // Volta com os botões da sala
         document.getElementById('sala0002-1,2').style.display = "flex"
+        document.getElementById('sala0002-4').style.display = "none"
         document.getElementById('controladorSenha').style.display = "none" // Desaparece com o local para inserir a senha
     
 

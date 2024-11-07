@@ -1,10 +1,8 @@
 #start{
     z-index: 1 ;
-    width: 250px;
-    height: 50px ;
     position: absolute;
-    top: 500px;
-    left: 500px;
+    top: 55vh;
+    left: 42vw;
     background: none;
     border: none;
 } 
@@ -28,27 +26,28 @@
 .bt_int {
     background: none;
     cursor: pointer;
-    border: none;
+    /* border: none; */
     
 }
 
 .bt_mov:hover{
-transform: scale(1.05);
-transition: transform 200ms ease-in-out;
+    transform: scale(1.05);
+    transition: transform 200ms ease-in-out;
 }
 
 #esquerda{
-    left: 20px;
-    top: 360px;
-    
+    left: 12vw;
+    top: 48vh;
 }
+
 #direita{
-    top: 360px;
+    right: 12vw;
+    top: 48vh;
 }
 
 #baixo{
-    left: 640px;
-    top: 650px;
+    left: 50vw;
+    top: 85vh;
     z-index: 1;
 }
 
@@ -62,8 +61,8 @@ transition: transform 200ms ease-in-out;
     width: 90px;
     height: 90px;
     border: none;
-    top: 555px;
-    left: 475px;
+    top: 25vh;
+    left: -9.5vw;
     background: none;
     color: white;
     padding: 2px;
@@ -82,8 +81,7 @@ transition: transform 200ms ease-in-out;
 }
 
 #img_inv{
-
     width: 420px;
-    left: 445px;
-    top: 530px;
+    left: -11.1vw;
+    top: 23vh;
 }
