@@ -28,10 +28,41 @@
 
 #tutorial {
     display: none;
-    left: 40vw;
-    top: 2vh;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     color: white;
     font-size:large;
     font-weight: medium;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#tutorialFase2 {
+    display: none;
+    height: 100%;
+    width: 100%;
+    padding-top: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size:medium;
+    font-weight: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 1000px) {
+    #tutorial {
+        font-size: medium;
+        padding-top: 20px;
+    }    
+    
+    #tutorialFase2 {
+        font-size: small;
+        font-weight: 600;
+        margin-top: 50px;
+    }
 }

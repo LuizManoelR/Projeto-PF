@@ -15,9 +15,9 @@
 
     <img style="display: none;" class ="imgbt" id="preloadImg" src="">
 
-    <div style="display: none;top: 740px; left: 370px;" id="tutorial">
-        <h2 style="color: white; width: 350px; left: 155px;">Você pegou um item!</h1>
-        <h2 style="color: white; width: 700px; top: 32px;">Clique no item desejado e selecione onde deseja utilizar</h1>
+    <div style="display: none; gap: 0px;" id="tutorialFase2">
+        <p style="color: white; position: relative;">Você pegou um item!</p>
+        <p style="color: white; position: relative;">Clique no item desejado e selecione onde deseja utilizar</p>
     </div>
      
     <button style="display: flex;" class='bt_mov' id="esquerda" onclick="background('esquerda')">
@@ -27,9 +27,11 @@
         <img class ="imgbt" height="35px" width="35px" id="btn_direita" src="./img/interfaceUsuario/botao_direita.png"  > 
     </button>
     
-    <button style="display: none;" class= "bt_mov" id="baixo" onclick="sair_inspecionar()">
-        <img class ="imgbt" id="btn_baixo" src="./img/interfaceUsuario/botao_baixo.png">
-    </button>
+    <div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: end;"> 
+        <button style="display: none;" class= "bt_mov" id="baixo" onclick="sair_inspecionar()">
+            <img class ="imgbt" id="btn_baixo" src="./img/interfaceUsuario/botao_baixo.png">
+        </button>
+    </div>
 
     <inspecionar>
         
@@ -38,9 +40,9 @@
             <button class="bt_int" style="width: 10vw; height: 15vh; left: -5vw; top: -31vh;" id='sala0001-1'
             onclick="inspecionar('sala0001-1','machado','ponteiros','img/imgFundo/Fase2/0001-1.png')"></button>
             
-            <div id="machadoEstado" style="display: none;">
-                <button id='machado' onclick="atualizarElementoINV(0, 'machado')">
-                    <img id='machadoMadeira' class="btn_inventory" style="top: -5vh;left: -3.5vw; transform: scale(0.8); display: flex;" src="./img/inventario/machadoINV.png"/>
+            <div id="machadoEstado" style="display: none; width: 100%; height: 100%; justify-content: center; align-items: center;">
+                <button id='machado' style="background: none; border: none;" onclick="atualizarElementoINV(0, 'machado')">
+                    <img id='machadoMadeira' class="btn_inventory" style="transform: scale(0.8); display: flex;" src="./img/inventario/machadoINV.png"/>
                 </button>
             </div>
 
@@ -56,13 +58,13 @@
             </div>             -->
             
             <div style="display: none;" id="ponteiros">
-                <div id="seta1" style="left:-10.5vw; top: -22vh; height: 400px; width: 400px; position: absolute; background: none;"> 
+                <div class="setas" id="seta1" > 
                     <input style="height:100px;width:100px;left: 150px; top: 0; position: absolute; opacity: 0%; z-index: 2;" type="checkbox" id="seta1Check">
-                    <img height="400px" width="400px" src="./img/Puzzle/puzzleHR/setaHR.png" >
+                    <img height="100%" width="100%" src="./img/Puzzle/puzzleHR/setaHR.png" >
                 </div>
-                <div id="seta2" style="left:-10.5vw; top: -22vh;height: 400px; width: 400px; position: absolute; rotate: 25deg;" > 
+                <div class="setas" id="seta2" style="rotate: 25deg;" > 
                     <input style="height:100px;width:100px;left: 150px; top: 0; position: absolute;  opacity: 0%; z-index: 2;" type="checkbox" id="seta2Check">
-                    <img height="400px" width="400px" src="./img/Puzzle/puzzleHR/setaM.png">
+                    <img height="100%" width="100%" src="./img/Puzzle/puzzleHR/setaM.png">
                 </div> 
             </div>
             
@@ -145,35 +147,32 @@
     </inspecionar>
     
     <inventario id="inventariogeral"> <!-- Itens e Inventário -->
-            
-        <!-- Itens para adicionar ao inventário -->
-        <!-- <button id='fechadura' onclick="usarElementoINV(0, 'fechadura')"> 
-            <img class="btn_inventory" style="top: 0;left: 0; transform: scale(0.8);" src="./img/inventario/start.jpg"/>
-        </button> -->
         
-        <!-- Inventário em Si -->
-
-        <img src="img/inventario/inventario novo2.png" id='img_inv'>
-
-        <button class="btn_inventory">1 
-            <inv id="inv0" style="display: none;">
+        <button class="btn_inventory">
+            <p>1</p> 
+            <inv id="inv0" style="display: none; width: 100%; height: 100%;">
                 <img class="btn_inventory_semPadrao" src="./img/inventario/machadoINV.png"/>
                 <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(0)" id="inv0Check" style="opacity: 0%;">
             </inv>
+            <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
         </button>
         
-        <button class="btn_inventory" style="left: -1.8vw;">‎ ‎ 2 
-            <inv id="inv1" style="display: none;">
+        <button class="btn_inventory">
+            <p>2</p> 
+            <inv id="inv1" style="display: none; width: 100%; height: 100%">
                 <img class="btn_inventory_semPadrao"  src="./img/inventario/lanternaINV.png"/>
                 <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(1)" id="inv1Check" style="opacity: 0%;">
             </inv>
+            <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
         </button>
         
-        <button class="btn_inventory" style="left: 6.2vw;">3 
-            <inv id="inv2">
+        <button class="btn_inventory">
+            <p>3</p> 
+            <inv id="inv2" style="display: none; width: 100%; height: 100%;">
                 <!-- <img class="btn_inventory_semPadrao" src=""/> -->
                 <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkaBoxVisual(2)" id="inv2Check" style="opacity: 0%;">
             </inv>
+            <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
         </button>
         
  

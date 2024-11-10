@@ -2,7 +2,7 @@
 const atualizarElementoINV = (posicao, idBotaoAntigo) => { // Atualiza o inventário com o item que o jogador acabou de pegar
     if (posicao == 1) {
         document.getElementById("gavetalanterna").style.display = "none"
-        document.getElementById('tutorial').style.display = "flex"
+        document.getElementById('tutorialFase2').style.display = "flex"
     }
     document.getElementById(idBotaoAntigo).style.display = "none" // Some o item do ambiente 
     document.getElementById('inv' + posicao).style.display = "flex" // Aparece o item no inventário

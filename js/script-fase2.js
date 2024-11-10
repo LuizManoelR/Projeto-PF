@@ -37,7 +37,7 @@ const background = (direcao) => { // Função para passar as imagens com click
     } else if (imagemAtual == "0002") {
         mudeImgSrc(direcao, "./img/imgFundo/Fase2/0004.png", "./img/imgFundo/Fase2/0003.png", imagemAtual)
     } else if (imagemAtual == "0003") {
-        document.getElementById('tutorial').style.display = "none"
+        document.getElementById('tutorialFase2').style.display = "none"
         mudeImgSrc(direcao, "./img/imgFundo/Fase2/0002.png", "./img/imgFundo/Fase2/0001.png", imagemAtual)
     } else if (imagemAtual == "0004" ) {
         mudeImgSrc(direcao, "./img/imgFundo/Fase2/0001.png", "./img/imgFundo/Fase2/0002.png", imagemAtual)
