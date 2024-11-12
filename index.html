@@ -10,7 +10,13 @@
 <body class="bg" style="height: 100vh; width: 100vw; overflow: hidden">
     
     <jogo class="bg1" style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;">
+        
         <img id="bg" style="width: 80vw; height: 90vh;" src="./css/background.jpg">
+        
+        <Video id="video" width="1280" height="720" style="width: 80vw; height: 90vh; display: none;"> 
+            <source src="./video/cutcine.mp4">
+        </Video>
+        
         <canvas id="jogoPrincipal" width="1280" height="720" style="width: 80vw; height: 90vh;"></canvas>
 
         <audio id= 'trilhaSonora_1' src="audio/trilhaSonora_1.MP3" style="display: none; "></audio>
@@ -21,7 +27,7 @@
             <h2 style="width: 300px; left: 400px;">Clique para investigar</h2> -->
         </div>
         <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-            <button id="start" onclick="IniciarJogo()">
+            <button id="start" onclick="cutcine()">
                 <img src="./img/interfaceUsuario/start.png" id="imgStart">
             </button>
         </div>

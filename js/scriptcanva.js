@@ -34,6 +34,21 @@ const IniciarJogo = () => {
     document.getElementById('sala0002-2').style.border = "solid 1px white"
     trilhasonora_1('play',0.4) // inicia a trilha sonora
 }
+
+const cutcine = () =>{
+    const video = document.getElementById('video')
+    document.getElementById("start").style.display = "none"
+    video.style.display = 'flex'
+    
+    video.play()
+    
+    video.addEventListener('ended', () => {
+        
+    video.style.display = 'none'
+    IniciarJogo()
+    
+    })
+}
     
 const telaCarregamento = () => { // Função que cuida de carregar todas as imagens antes do jogo funcionar, importante para conexões mais lentas
     ctx.font = "48px serif";

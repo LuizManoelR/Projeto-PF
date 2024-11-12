@@ -20,6 +20,7 @@ const control_trilha= (id) => (state,vol) =>{
     if (state == 'play'){
         audio.volume = vol
         audio.play()
+        audio.loop = true
     }else audio.pause()
 }
 
