@@ -111,13 +111,38 @@
     top: 23vh;
 } */
 
+#ponteiros {
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+}
+
 .setas {
-    left:-10.5vw; 
-    top: -22vh; 
     height: 400px; 
     width: 400px; 
-    position: absolute; 
     background: none;
+    display: flex;
+    justify-content: center;
+}
+
+#seta1Check {
+    height: 11vh;
+    width: 11vw;
+    position: absolute; 
+    z-index: 2;
+    opacity: 0;
+}
+
+#seta2Check {
+    height: 11vh;
+    width: 11vw;
+    position: absolute;  
+    z-index: 2;
+    opacity: 0;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -137,17 +162,19 @@
     }
 
     .setas {
-        left: -12.4vw;
-        top: -27vh; 
-        height: 250px; 
-        width: 250px;
+        height: 200px; 
+        width: 200px;
     }
 
     #seta1Check {
-        opacity: 50%;
+        opacity: 20%;
+        height: 15vh;
+        width: 15vw;
     } 
 
     #seta2Check {
-        opacity: 50%;
+        opacity: 20%;
+        height: 15vh;
+        width: 15vw;
     }    
 }
