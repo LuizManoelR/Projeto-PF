@@ -13,8 +13,8 @@
         
         <img id="bg" style="width: 80vw; height: 90vh;" src="./css/background.jpg">
         
-        <Video id="video" width="1280" height="720" style="width: 80vw; height: 90vh; display: none;"> 
-            <source src="./video/cutcine.mp4">
+        <Video id="video" width="1280" height="720" disablepictureinpicture style="width: 80vw; height: 90vh; display: none; z-index: 10;"> 
+            <source src="./video/cutscene.mp4">
         </Video>
         
         <canvas id="jogoPrincipal" width="1280" height="720" style="width: 80vw; height: 90vh;"></canvas>
@@ -27,7 +27,7 @@
             <h2 style="width: 300px; left: 400px;">Clique para investigar</h2> -->
         </div>
         <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-            <button id="start" onclick="cutcine()">
+            <button id="start" onclick="cutscene()" style="bottom: 30vh;">
                 <img src="./img/interfaceUsuario/start.png" id="imgStart">
             </button>
         </div>

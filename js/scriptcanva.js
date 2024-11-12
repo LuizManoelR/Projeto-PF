@@ -1,7 +1,4 @@
 const IniciarJogo = () => {
-    telaCarregamento() // Puxa a tela de carregamento
-
-    // document.getElementById('direita').style.left = (canvas.width - 60) + "px" // Para a posição da seta direita ser dinamica de acordo com o tamanho do canvas
     
     document.getElementById("start").style.display = "none"
     document.getElementById('direita').style.display = "flex" 
@@ -12,17 +9,6 @@ const IniciarJogo = () => {
     document.getElementById('sala0004').style.display = "none" 
     document.getElementById('sala0003').style.display = "none"
     document.getElementById('tutorial').style.display = "flex" // Tudo involvendo tutorial deve aparecer no inicio
-    
-    // Essa fase não utiliza inventario, logo essas funções não serão usadas por enquanto
-    // const inventario = new Image();
-
-    // document.getElementById('inventariogeral').style.display = "flex" // Para que o inventário apareça depois de iniciar o jogo
-    // document.getElementById('inv0').style.display = "none" // Evita que os itens apareça antes de pegá-los
-    // inventario.onload = () => {
-        //     ctx.drawImage(inventario, canvas.width - 679, canvas.height - 170, canvas.width * 0.6, canvas.height * 0.15);
-        // }
-        
-    // inventario.src = "./img/inventario/inventario.png";
 
     img.onload = () => {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -35,9 +21,11 @@ const IniciarJogo = () => {
     trilhasonora_1('play',0.4) // inicia a trilha sonora
 }
 
-const cutcine = () =>{
+const cutscene = () =>{
+    telaCarregamento() // Puxa a tela de carregamento
     const video = document.getElementById('video')
     document.getElementById("start").style.display = "none"
+    document.getElementById("bg").style.display = "none"
     video.style.display = 'flex'
     
     video.play()
@@ -46,15 +34,14 @@ const cutcine = () =>{
         
     video.style.display = 'none'
     IniciarJogo()
-    
     })
 }
     
 const telaCarregamento = () => { // Função que cuida de carregar todas as imagens antes do jogo funcionar, importante para conexões mais lentas
-    ctx.font = "48px serif";
-    ctx.fillStyle = "White";
-    ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
-    const listaImg = ["./img/imgFundo/0001.png","./img/imgFundo/0001-1.png", "./img/imgFundo/0002.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png","./img/imgFundo/0002-3.png" ,"./img/imgFundo/0002-4.png","./img/imgFundo/0003.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png","./img/imgFundo/0003-4.png", "./img/imgFundo/0004.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
+    // ctx.font = "48px serif";
+    // ctx.fillStyle = "White";
+    // ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
+    const listaImg = ["./img/imgFundo/0001.png", "./img/imgFundo/0002.png", "./img/imgFundo/0003.png", "./img/imgFundo/0004.png", "./img/imgFundo/0001-1.png", "./img/imgFundo/0002-1.png", "./img/imgFundo/0002-2.png","./img/imgFundo/0002-3.png" ,"./img/imgFundo/0002-4.png", "./img/imgFundo/0003-1.png", "./img/imgFundo/0003-2.png", "./img/imgFundo/0003-3.png","./img/imgFundo/0003-4.png", "./img/imgFundo/0004-1.png", "./img/imgFundo/0004-2.png"]
     
     const listaAudio = ['audio/efeitos sonoros/effect_gaveta.MP3','audio/efeitos sonoros/porta.MP3']
 
