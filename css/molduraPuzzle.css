@@ -1,0 +1,98 @@
+#molduraPuzzleTela {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    left: 0; 
+    top: 0;
+
+}
+
+#molduraPuzzle {
+    display: flex;
+    position: relative;
+    left: -0.2%; 
+    top: -1%;
+    width: 23.2%;
+    height: 70%;
+}
+
+#molduraPuzzle button {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0%;
+}
+
+#paisagemMoldura {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#bandejaMoldura {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+}
+
+.imagensPedacos {
+    /* left: 150%; */
+    width: 50.2%;
+    height: 52.5%;
+    z-index: 2;
+    position: absolute;
+}
+
+.imagensPedacos img {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+}
+
+.imagensPedacos input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 30%;
+    z-index: 10;
+}
+
+#imagensPedacos1 {
+    display: none;
+    width: 50%;
+    height: 55%;
+    left: 150%;
+    top: -10%
+}
+
+#imagensPedacos2 {
+    display: none;
+    width: 64%;
+    height: 52%;
+    left: 145%;
+    top: 60%;
+    /* border: 2px solid blue; */
+}
+
+#imagensPedacos3 {
+    display: none;
+    width: 40.5%;
+    height: 50%;
+    left: -90%;
+    top: 30%;
+}
+
+/* @media only screen and (max-width: 1000px) {
+    #molduraPuzzle {
+        left: -2px;
+        top: -10px;
+    }
+} */

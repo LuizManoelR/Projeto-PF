@@ -1,0 +1,42 @@
+#inv2 {
+    display: none; 
+    width:85%; 
+    height: 86%; 
+    left: 0.3vw;
+    top: 0.4vh;
+    justify-content: center; 
+    align-items: center;
+}
+
+#inv2foto2 {
+    display: none;
+    width: 50%; 
+    height: 55%; 
+    position: relative; 
+    rotate: -0.09turn; 
+    z-index: 4; 
+    left: 16%; 
+    top: 8%; 
+    filter: drop-shadow(3px 3px 1.5rem black); 
+}
+
+#inv2foto3 {
+    display: none;
+    width: 55%; 
+    height: 65%; 
+    position: relative; 
+    z-index: 3; 
+    filter: drop-shadow(4px 4px 2rem black); 
+}
+
+#inv2foto4 {
+    display: none;
+    width: 40.5%; 
+    height: 60%; 
+    position: relative; 
+    rotate: 0.09turn; 
+    z-index: 2; 
+    left: -13%; 
+    top: 8%; 
+    filter: drop-shadow(4px 3px 1.5rem black); 
+}

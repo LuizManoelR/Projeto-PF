@@ -8,45 +8,50 @@
 </head>
 
 <body class="bg" style="height: 100vh; width: 100vw; overflow: hidden">
-<jogo style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;">
-    <canvas id="fase2" width="1280" height="720" style="width: 80vw; height: 90vh;"></canvas>
-   
-    <audio id = 'trilhaSonora_2' src="audio/trilhaSonora_2.mp3" style="display: none;"></audio>
+    <jogo style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;">
+        <canvas id="fase2" width="1280" height="720" style="width: 80vw; height: 90vh;"></canvas>
 
-    <img style="display: none;" class ="imgbt" id="preloadImg" src="">
+        <audio id='trilhaSonora_2' src="audio/trilhaSonora_2.mp3" style="display: none;"></audio>
 
-    <div style="display: none; gap: 0px;" id="tutorialFase2">
-        <p style="color: white; position: relative;">Você pegou um item!</p>
-        <p style="color: white; position: relative;">Clique no item desejado e selecione onde deseja utilizar</p>
-    </div>
-     
-    <button style="display: flex;" class='bt_mov' id="esquerda" onclick="background('esquerda')">
-        <img class="imgbt" height="35px" width="35px" id="btn_esquerda" src="./img/interfaceUsuario/botao_esquerda.png" >
-    </button>
-    <button style="display: flex;" class='bt_mov' id="direita" onclick="background()">
-        <img class ="imgbt" height="35px" width="35px" id="btn_direita" src="./img/interfaceUsuario/botao_direita.png"  > 
-    </button>
-    
-    <div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: end;"> 
-        <button style="display: none;" class= "bt_mov" id="baixo" onclick="sair_inspecionar()">
-            <img class ="imgbt" id="btn_baixo" src="./img/interfaceUsuario/botao_baixo.png">
+        <img style="display: none;" class="imgbt" id="preloadImg" src="">
+
+        <div style="display: none; gap: 0px;" id="tutorialFase2">
+            <p style="color: white; position: relative;">Você pegou um item!</p>
+            <p style="color: white; position: relative;">Clique no item desejado e selecione onde deseja utilizar</p>
+        </div>
+
+        <button style="display: flex;" class='bt_mov' id="esquerda" onclick="background('esquerda')">
+            <img class="imgbt" height="35px" width="35px" id="btn_esquerda"
+                src="./img/interfaceUsuario/botao_esquerda.png">
         </button>
-    </div>
+        <button style="display: flex;" class='bt_mov' id="direita" onclick="background()">
+            <img class="imgbt" height="35px" width="35px" id="btn_direita"
+                src="./img/interfaceUsuario/botao_direita.png">
+        </button>
 
-    <inspecionar>
-        
-        <div id = 'sala0001'>
-            
-            <button class="bt_int" style="width: 10vw; height: 15vh; left: -5vw; top: -31vh;" id='sala0001-1'
-            onclick="inspecionar('sala0001-1','machado','ponteiros','img/imgFundo/Fase2/0001-1.png')"></button>
-            
-            <div id="machadoEstado" style="display: none; width: 100%; height: 100%; justify-content: center; align-items: center;">
-                <button id='machado' style="background: none; border: none;" onclick="atualizarElementoINV(0, 'machado')">
-                    <img id='machadoMadeira' class="btn_inventory" style="transform: scale(0.8); display: flex;" src="./img/inventario/machadoINV.png"/>
-                </button>
-            </div>
+        <div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: end;">
+            <button style="display: none;" class="bt_mov" id="baixo" onclick="sair_inspecionar()">
+                <img class="imgbt" id="btn_baixo" src="./img/interfaceUsuario/botao_baixo.png">
+            </button>
+        </div>
 
-            <!-- <div style="display: none;" id="ponteiros">
+        <inspecionar>
+
+            <div id='sala0001'>
+
+                <button class="bt_int" style="width: 10vw; height: 15vh; left: -5vw; top: -31vh;" id='sala0001-1'
+                    onclick="inspecionar('sala0001-1','machado','ponteiros','img/imgFundo/Fase2/0001-1.png')"></button>
+
+                <div id="machadoEstado"
+                    style="display: none; width: 100%; height: 100%; justify-content: center; align-items: center;">
+                    <button id='machado' style="background: none; border: none;"
+                        onclick="atualizarElementoINV(0, 'machado')">
+                        <img id='machadoMadeira' class="btn_inventory" style="transform: scale(0.8); display: flex;"
+                            src="./img/inventario/machadoINV.png" />
+                    </button>
+                </div>
+
+                <!-- <div style="display: none;" id="ponteiros">
                 <div id="seta1" style="left: -10.5vw; top: -22vh; height: 400px; width: 400px; position: absolute; background: none;  border: 2px solid red;"> 
                     <input style="height:100px;width:100px;left: 150px; top: 0; position: absolute; opacity: 50%; z-index: 2; border: 2px solid blue;" type="checkbox" id="seta1Check">
                     <img height="400px" width="400px" src="./img/Puzzle/puzzleHR/setaHR.png" >
@@ -56,136 +61,221 @@
                     <img height="400px" width="400px" src="./img/Puzzle/puzzleHR/setaM.png">
                 </div> 
             </div>             -->
-            
-            <div id="ponteiros">
-                <div class="setas" id="seta1" > 
-                    <input type="checkbox" id="seta1Check">
-                    <img height="100%" width="100%" src="./img/Puzzle/puzzleHR/setaHR.png" >
+
+                <div id="ponteiros">
+                    <div class="setas" id="seta1">
+                        <input type="checkbox" id="seta1Check">
+                        <img height="100%" width="100%" src="./img/Puzzle/puzzleHR/setaHR.png">
+                    </div>
+                    <div class="setas" id="seta2" style="rotate: 25deg;">
+                        <input type="checkbox" id="seta2Check">
+                        <img height="100%" width="100%" src="./img/Puzzle/puzzleHR/setaM.png">
+                    </div>
                 </div>
-                <div class="setas" id="seta2" style="rotate: 25deg;" > 
-                    <input type="checkbox" id="seta2Check">
-                    <img height="100%" width="100%" src="./img/Puzzle/puzzleHR/setaM.png">
-                </div> 
+
             </div>
             
-        </div>
-        
-        <div id = 'sala0002'>
-            
-            <button class="bt_int" style="width: 15vw; height: 35vh; left: 7vw; top: -25vh;" id='sala0002-1'
-            onclick="inspecionar('sala0002-1','sala0002-2','lanternaQuadro','img/imgFundo/Fase2/0002-1.png')"></button>
+            <div id='sala0002'>
+                
+                <button class="bt_int" style="width: 15vw; height: 35vh; left: 7vw; top: -25vh;" id='sala0002-1'
+                onclick="inspecionar('sala0002-1','sala0002-2','lanternaQuadro','img/imgFundo/Fase2/0002-1.png')"></button>
+                
+                <button class="bt_int" id='lanternaQuadro'
+                style="display: none; position: absolute; top: -47vh; left: -24vw; width: 54vw; height: 93vh;"
+                onclick="usarElementoINV(1, 'lanternaQuadro')"></button>
+                
+                <button class="bt_int" style="width: 35vw; height: 30vh;top: 0vh; left: -45vw;" id='sala0002-2'
+                onclick="inspecionar('sala0002-1','sala0002-2','sala0002-3','img/imgFundo/Fase2/0002-2.png')"></button>
+                
+                <button class="bt_int" style="width: 30vw; height: 35vh; left: -15vw; top: -38vh; display: none;"
+                id='sala0002-3'
+                onclick="inspecionar('sala0002-3','sala0002-3','divFoto2','img/imgFundo/Fase2/0002-3.png')"></button>
+                
+                <div id="divFoto2" style="display: none; width: 8.77vw; height: 11.42vh; left: -2.42vw; top: -24.52vh;">
+                    <button class="bt_int" style="width: 100%;border: none; height: 100%;" id='foto2'
+                        onclick="atualizarElementoINV(2, 'foto2')">
+                        <img style="left : 0; top: 0; display: flex;" height=" 100%" width="100%"
+                            src="./img/imgFundo/Fase2/0002-3-Foto2.png">
+                    </button>
+                </div>
 
-            <button class="bt_int" id='lanternaQuadro' style="display: none; position: absolute; top: -47vh; left: -24vw; width: 54vw; height: 93vh;" onclick="usarElementoINV(1, 'lanternaQuadro')"></button>
-            
-            <button class="bt_int" style="width: 35vw; height: 30vh;top: 0vh; left: -45vw;" id='sala0002-2'
-            onclick="inspecionar('sala0002-1','sala0002-2','sala0002-3','img/imgFundo/Fase2/0002-2.png')"></button>
-           
-            <button class="bt_int" style="width: 30vw; height: 35vh; left: -15vw; top: -38vh; display: none;" id='sala0002-3'
-            onclick="inspecionar('sala0002-3','sala0002-3','sala0002','img/imgFundo/Fase2/0002-3.png')"></button>
+            </div>
 
-        </div>
+            <div id='sala0003'>
 
-        <div id = 'sala0003'>
-        
-            <button class="bt_int" style="width: 20vw; height: 40vh; left: -34vw; top: -27vh;" id='sala0003-1'
-            onclick="inspecionar('sala0003-1','sala0003-2','sala0003','img/imgFundo/Fase2/0003-1.png')">
-            </button>  
-        
-            <button class="bt_int" style="width: 22vw; height: 20vh; left: -11vw; top: 0;" id='sala0003-2'
-            onclick="inspecionar('sala0003-1','sala0003-2','sala0003-3,4','img/imgFundo/Fase2/0003-2.png')">
-            </button>
+                <button class="bt_int" style="width: 20vw; height: 40vh; left: -34vw; top: -27vh;" id='sala0003-1'
+                    onclick="inspecionar('sala0003-1','sala0003-2','divFoto3','img/imgFundo/Fase2/0003-1.png')">
+                    <img id="foto3Longe" style="width: 3.17vw; height: 7.03vh; left: 11.875vw; top: 10.47vh;" src="./img/imgFundo/Fase2/0003-foto3.png">
+                </button>
 
-            <div id="pegarlanterna" style="display: none; position: absolute; width: 30vw; height: 27.5vh; top: -4vh; left: -15vw;">
-                <button class= "bt_int" style="width: 100%;border: none; height: 100%;"  id='lanterna' onclick="atualizarElementoINV(1, 'lanterna')">
-                    <img id="gavetalanterna2" style="left : 0; top: 0; display: flex;" height=" 100%" width="100%" src="./img/imgFundo/Fase2/0003-4-3.png">
+                <div id="divFoto3" style="display: none; position: absolute; width: 20.05vw; height: 28.88vh; top: -35.49vh; left: 4.32vw;">
+                    <button class="bt_int" style="width: 100%;border: none; height: 100%;" id='foto3'
+                    onclick="atualizarElementoINV(2, 'foto3')">
+                    <img style="left : 0; top: 0; display: flex;" height=" 100%" width="100%"
+                    src="./img/imgFundo/Fase2/0003-1-Foto3.png">
                 </button>
             </div>
-        
             
-            <div id = 'sala0003-3,4' style="display: none;">
-
-                <button class="bt_int" style="width: 9.5vw; height: 23vh; left: 16.5vw; top: 2vh; display: flex;" id='sala0003-3'
-                onclick="inspecionar('sala0003-3,4','sala0003-3,4','sala0003','img/imgFundo/Fase2/0003-3.png')"></button>
-                
-                <button class="bt_int" style="width: 31vw; height: 15vh; left: -14vw; top: 30vh; display:flex ;" id='sala0003-3'
-                onclick="inspecionar('sala0003-3,4','sala0003-3,4','pegarlanterna','img/imgFundo/Fase2/0003-4.png')">
-                    <img id="gavetalanterna" style="left: 0; top: 0; display: flex;" height="100%" width="100%" src="./img/imgFundo/Fase2/0003-3-4.png">
+            <button class="bt_int" style="width: 22vw; height: 20vh; left: -11vw; top: 0;" id='sala0003-2'
+            onclick="inspecionar('sala0003-1','sala0003-2','sala0003-3,4','img/imgFundo/Fase2/0003-2.png')">
+                <img id="foto4Longe" style="width: 2.08vw; height: 0.83vh; left: 10.72vw; top: 6.59vh;" src="./img/imgFundo/Fase2/0003-foto4.png">
             </button>
+        
+        
                 
-                
-            </div>
-
+                <div id="pegarlanterna"
+                style="display: none; position: absolute; width: 30vw; height: 27.5vh; top: -4vh; left: -15vw;">
+                <button class="bt_int" style="width: 100%;border: none; height: 100%;" id='lanterna'
+                onclick="atualizarElementoINV(1, 'lanterna')">
+                <img id="gavetalanterna2" style="left : 0; top: 0; display: flex;" height=" 100%" width="100%"
+                src="./img/imgFundo/Fase2/0003-4-3.png">
+            </button>
         </div>
+        
+        
+        <div id='sala0003-3,4' style="display: none;">
+            
+                    <div id="divFoto4" style="display: flex; position: absolute; width: 5.52vw; height: 2.87vh; top: 19vh; left: -1.51vw; opacity: 100%;">
+                        <button class="bt_int" style="width: 100%;border: none; height: 100%;" id='foto4'
+                            onclick="atualizarElementoINV(2, 'foto4')">
+                            <img style="left : 0; top: 0; display: flex;" height=" 100%" width="100%"
+                                src="./img/imgFundo/Fase2/0003-2-foto4.png">
+                        </button>
+                    </div>
 
-        <div id='sala0004'>
+                    <button class="bt_int" style="width: 9.5vw; height: 23vh; left: 16.5vw; top: 2vh; display: flex;"
+                        id='sala0003-3'
+                        onclick="inspecionar('sala0003-3,4','sala0003-3,4','molduraPuzzleTela','img/imgFundo/Fase2/0003-3.png')"></button>                    
+                        
+                    <button class="bt_int" style="width: 9.5vw; height: 23vh; left: 16.5vw; top: 2vh; display: none;"
+                        id='sala0003-3-2'
+                        onclick="inspecionar('sala0003-3,4','sala0003-3,4','molduraPuzzleTela','img/imgFundo/Fase2/0003-3-2.png')"></button>
 
-            <button  class="bt_int" style="width: 18vw; height: 53vh; left: -9vw; top: -26.5vh;" id='sala0004-1'
-            onclick="inspecionar('sala0004-1','sala0004-1','madeiraPorta','img/imgFundo/Fase2/0004-1.png')">
-                <img id="madeiraPorta2" style="left: 0; top: 0; display: flex;" height="100%" width="100%" src="./img/imgFundo/Fase2/0004-madeira.png" >
-            </button>
+                    <button class="bt_int" style="width: 31vw; height: 15vh; left: -14vw; top: 30vh; display:flex ;"
+                        id='sala0003-4'
+                        onclick="inspecionar('sala0003-3,4','sala0003-3,4','pegarlanterna','img/imgFundo/Fase2/0003-4.png')">
+                        <img id="gavetalanterna" style="left: 0; top: 0; display: flex;" height="100%" width="100%"
+                            src="./img/imgFundo/Fase2/0003-3-4.png">
+                    </button>
 
-            <button class="bt_int" id='madeiraPorta' style="display: none; position: absolute; top: -45vh; left: -40vw; width: 80vw; height: 90vh;" onclick="usarElementoINV(0, 'madeiraPorta')">
-                <img id="madeiraPorta1" style="left: 0; top: 0; display: flex;" height="100%" width="100%" src="./img/imgFundo/Fase2/0004-1-madeira.png" >
-            </button>
+                </div>
+                    
+                <div id="molduraPuzzleTela" style="display: none;">
+                        <div id="molduraPuzzle">
+                            <img src="">
+                            <button id="virarPuzzle" onclick="mostrarPuzzleCompleto()"></button>
+                            <div id="bandejaMoldura">
+                                <div class="imagensPedacos" id="imagensPedacos1" draggable="false">
+                                    <!-- Left: 506px| Top: 8.5px -->
+                                    <input type="checkbox" id="imagensPedacos1Check">
+                                    <img src="./img/Puzzle/puzzlefoto/foto 02.png" draggable="false">
+                                </div>
+                                <div class="imagensPedacos" id="imagensPedacos2" draggable="false">
+                                    <!-- Left: 11px| Top: 641.5px -->
+                                    <input type="checkbox" id="imagensPedacos2Check">
+                                    <img src="./img/Puzzle/puzzlefoto/foto 03.png" draggable="false">
+                                </div>
+                                <div class="imagensPedacos" id="imagensPedacos3" draggable="false">
+                                    <!-- Left: 588px| Top: 701.5px -->
+                                    <input type="checkbox" id="imagensPedacos3Check">
+                                    <img src="./img/Puzzle/puzzlefoto/foto 04.png" draggable="false">
+                                </div>
+                            </div>
+                            <img src="./img/Puzzle/puzzlefoto/paisagem.png" id="paisagemMoldura" draggable="false">
+                        </div>
+                    
+                </div>
+                
+                    
+                    
+                </div>
+                
+                <div id='sala0004'>
 
-            <a style="display: none; top: -5vh; left: -6vw; height: 20vh; width: 20vw;color: white; font-family: Arial, Helvetica, sans-serif; font-size: xx-large;" id="textoFinal">Você escapou.....</a>
-            <div style="display: none; justify-content: center; align-items: center; left: -13vw; height: 0; width: 400px;  gap: 10px;" id="controladorSenha">
-                <h2 style="color: rgb(0, 0, 0); top: -6.5vh;width: 13vw;font-size: 18px;">Digite a senha</h2>
-                <input style="position: static; width: 120px; height: 50px; font-size:xx-large;" type="number" id="senhaInput" autocomplete="off" autofocus="on" min="0" max="99999">
-                <button style="position: static; width: 50px; height: 50px;" onclick="verificarSenha()">SEND</button> 
-            </div>
+                <button class="bt_int" style="width: 18vw; height: 53vh; left: -9vw; top: -26.5vh;" id='sala0004-1'
+                    onclick="inspecionar('sala0004-1','sala0004-1','madeiraPorta','img/imgFundo/Fase2/0004-1.png')">
+                    <img id="madeiraPorta2" style="left: 0; top: 0; display: flex;" height="100%" width="100%"
+                        src="./img/imgFundo/Fase2/0004-madeira.png">
+                </button>
 
-            <!-- <button class="bt_int" style="width: 310px;left: 970px; height: 320px;top: 340px;" id='sala0004-2'
+                <button class="bt_int" id='madeiraPorta'
+                    style="display: none; position: absolute; top: -45vh; left: -40vw; width: 80vw; height: 90vh;"
+                    onclick="usarElementoINV(0, 'madeiraPorta')">
+                    <img id="madeiraPorta1" style="left: 0; top: 0; display: flex;" height="100%" width="100%"
+                        src="./img/imgFundo/Fase2/0004-1-madeira.png">
+                </button>
+
+                <a style="display: none; top: -5vh; left: -6vw; height: 20vh; width: 20vw;color: white; font-family: Arial, Helvetica, sans-serif; font-size: xx-large;"
+                    id="textoFinal">Você escapou.....</a>
+                <div style="display: none; justify-content: center; align-items: center; left: -13vw; height: 0; width: 400px;  gap: 10px;"
+                    id="controladorSenha">
+                    <h2 style="color: rgb(0, 0, 0); top: -6.5vh;width: 13vw;font-size: 18px;">Digite a senha</h2>
+                    <input style="position: static; width: 120px; height: 50px; font-size:xx-large;" type="number"
+                        id="senhaInput" autocomplete="off" autofocus="on" min="0" max="99999">
+                    <button style="position: static; width: 50px; height: 50px;"
+                        onclick="verificarSenha()">SEND</button>
+                </div>
+
+                <!-- <button class="bt_int" style="width: 310px;left: 970px; height: 320px;top: 340px;" id='sala0004-2'
             onclick="inspecionar('sala0004-1','sala0004-2','sala0004-3','img/imgFundo/Fase2/0004-2.png')"></button> -->
-           
-            <button class="bt_int" style="width: 400px; height: 270px; left: 430px; top: 70px; display: none;" id='sala0004-3'
-            onclick="inspecionar('sala0004-3','sala0004-3','sala0004','img/imgFundo/Fase2/0004-3.png')"></button>
 
-        </div>
+                <button class="bt_int" style="width: 400px; height: 270px; left: 430px; top: 70px; display: none;"
+                    id='sala0004-3'
+                    onclick="inspecionar('sala0004-3','sala0004-3','sala0004','img/imgFundo/Fase2/0004-3.png')"></button>
+
+            </div>
 
 
-    </inspecionar>
-    
-    <inventario id="inventariogeral"> <!-- Itens e Inventário -->
-        
-        <button class="btn_inventory">
-            <p>1</p> 
-            <inv id="inv0" style="display: none; width: 100%; height: 100%;">
-                <img class="btn_inventory_semPadrao" src="./img/inventario/machadoINV.png"/>
-                <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(0)" id="inv0Check" style="opacity: 0%;">
-            </inv>
-            <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
-        </button>
-        
-        <button class="btn_inventory">
-            <p>2</p> 
-            <inv id="inv1" style="display: none; width: 100%; height: 100%">
-                <img class="btn_inventory_semPadrao"  src="./img/inventario/lanternaINV.png"/>
-                <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(1)" id="inv1Check" style="opacity: 0%;">
-            </inv>
-            <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
-        </button>
-        
-        <button class="btn_inventory">
-            <p>3</p> 
-            <inv id="inv2" style="display: none; width: 100%; height: 100%;">
-                <!-- <img class="btn_inventory_semPadrao" src=""/> -->
-                <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkaBoxVisual(2)" id="inv2Check" style="opacity: 0%;">
-            </inv>
-            <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
-        </button>
-        
- 
-        
-    </inventario>
-</jogo>
+        </inspecionar>
 
-<script src="./js/base.js"></script>
-<script src="./js/script-fase2.js"></script>
-<script src="./js/inventario.js"></script>
-<script src="./js/Fase2/relogio.js"></script>
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/button.css">
+        <inventario id="inventariogeral"> <!-- Itens e Inventário -->
+
+            <button class="btn_inventory">
+                <p>1</p>
+                <inv id="inv0" style="display: none; width: 100%; height: 100%;">
+                    <img class="btn_inventory_semPadrao" src="./img/inventario/machadoINV.png" />
+                    <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(0)" id="inv0Check"
+                        style="opacity: 0%;">
+                </inv>
+                <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
+            </button>
+
+            <button class="btn_inventory">
+                <p>2</p>
+                <inv id="inv1" style="display: none; width: 100%; height: 100%">
+                    <img class="btn_inventory_semPadrao" src="./img/inventario/lanternaINV.png" />
+                    <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(1)" id="inv1Check"
+                        style="opacity: 0%;">
+                </inv>
+                <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
+            </button>
+
+            <button class="btn_inventory">
+                <p>3</p>
+                <inv id="inv2">
+                    <img class="btn_inventory_semPadrao" id="inv2foto2" src="./img/Puzzle/puzzlefoto/foto 02.png"/>
+                    <img class="btn_inventory_semPadrao" id="inv2foto3" src="./img/Puzzle/puzzlefoto/foto 03.png"/>
+                    <img class="btn_inventory_semPadrao" id="inv2foto4" src="./img/Puzzle/puzzlefoto/foto 04.png"/>
+                    <input type="checkbox" class="btn_inventory_semPadrao" onclick="checkBoxVisual(2)" id="inv2Check"
+                        style="opacity: 0%; z-index: 5;">
+                </inv>
+                <img src="img/inventario/inventarioSeparado.png" id='img_inv'>
+            </button>
+
+
+
+        </inventario>
+    </jogo>
+
+    <script src="./js/base.js"></script>
+    <script src="./js/script-fase2.js"></script>
+    <script src="./js/inventario.js"></script>
+    <script src="./js/Fase2/relogio.js"></script>
+    <script src="./js/Fase2/moldura.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="./css/inventario.css">
+    <link rel="stylesheet" href="./css/molduraPuzzle.css">
 
 </body>
 

@@ -4,8 +4,18 @@ const atualizarElementoINV = (posicao, idBotaoAntigo) => { // Atualiza o invent�
         document.getElementById("gavetalanterna").style.display = "none"
         document.getElementById('tutorialFase2').style.display = "flex"
     }
-    document.getElementById(idBotaoAntigo).style.display = "none" // Some o item do ambiente 
+    if (posicao == 2) {
+        document.getElementById('inv' + posicao + idBotaoAntigo).style.display = "flex" // Aparece o item no inventário
+        comecarMoveMoldura((idBotaoAntigo == "foto2" ? "imagensPedacos1":(idBotaoAntigo == "foto3" ? "imagensPedacos2":"imagensPedacos3")))
+        if (idBotaoAntigo == "foto4") {
+            document.getElementById("foto4Longe").style.display = "none"
+        } else if (idBotaoAntigo == "foto3") {
+            document.getElementById("foto3Longe").style.display = "none"
+        }
+    }
     document.getElementById('inv' + posicao).style.display = "flex" // Aparece o item no inventário
+    document.getElementById(idBotaoAntigo).style.display = "none" // Some o item do ambiente 
+    
 }
 
 const existeElementoINV = (posicao) => { //Verifica que se o item está no inventário

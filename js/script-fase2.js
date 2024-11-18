@@ -49,7 +49,7 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
     ctx.fillStyle = "White";
     ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
     
-    const listaImg =["./img/imgFundo/Fase2/0001.png","./img/imgFundo/Fase2/0001-1.png","./img/imgFundo/Fase2/0002.png","./img/imgFundo/Fase2/0002-1.png","./img/imgFundo/Fase2/0002-1-2.png","./img/imgFundo/Fase2/0002-2.png","./img/imgFundo/Fase2/0002-3.png","./img/imgFundo/Fase2/0003.png","./img/imgFundo/Fase2/0003-2.png","./img/imgFundo/Fase2/0003-3.png","./img/imgFundo/Fase2/0003-4.png","./img/imgFundo/Fase2/0004.png","./img/imgFundo/Fase2/0004-1.png", "./img/imgFundo/Fase2/0004-1-madeira.png", "./img/imgFundo/Fase2/0004-madeira.png"]
+    const listaImg =["./img/imgFundo/Fase2/0001.png","./img/imgFundo/Fase2/0001-1.png","./img/imgFundo/Fase2/0002.png","./img/imgFundo/Fase2/0002-1.png","./img/imgFundo/Fase2/0002-1-2.png","./img/imgFundo/Fase2/0002-2.png","./img/imgFundo/Fase2/0002-3.png","./img/imgFundo/Fase2/0003.png","./img/imgFundo/Fase2/0003-2.png", "./img/imgFundo/Fase2/0003-3-2.png","./img/imgFundo/Fase2/0003-3.png","./img/imgFundo/Fase2/0003-4.png","./img/imgFundo/Fase2/0004.png","./img/imgFundo/Fase2/0004-1.png", "./img/imgFundo/Fase2/0004-1-madeira.png", "./img/imgFundo/Fase2/0004-madeira.png"]
     listaImg.map((x,acc) => {
         const imagemPreload = new Image(); // Cria um novo objeto img
         imagemPreload.src = x // Coloca essa novo objeto com src igual ao valor da lista
@@ -64,8 +64,7 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     
     document.getElementById(idAtual).style.display = "none" // pegue o id atual e faça ele desaparecer, no caso, de um botão
     document.getElementById(idAtual2).style.display = "none" //faça o mesmo com o idAtual2
-    console.log(document.getElementById('madeiraPorta1').style.display)
-    console.log(imgAtual)
+    
     if (document.getElementById('madeiraPorta1').style.display == "none" && imgAtual == '0004') {
          document.getElementById('controladorSenha').style.display = "flex" 
     }
@@ -89,6 +88,8 @@ const sair_inspecionar = () =>{
     document.getElementById('direita').style.display = "flex" // Faz aparecer os botões da direta e esquerda 
     document.getElementById('esquerda').style.display = "flex"
     document.getElementById('baixo').style.display = "none"
+
+    console.log(imagemAtual)
     
     if (imagemAtual == "0002-1" || imagemAtual == "0002-2" || imagemAtual == "0002-3" || imagemAtual == "0002-1-2") { // Confere que imagem está sendo mostrada agora
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0002.png') // Muda para a imagem principal da sala
@@ -96,28 +97,31 @@ const sair_inspecionar = () =>{
         document.getElementById('sala0002-2').style.display = "flex" 
         document.getElementById('sala0002-3').style.display = "none" 
         document.getElementById('lanternaQuadro').style.display = "none" 
+        document.getElementById('divFoto2').style.display = "none" 
         
 
-    }  else if (imagemAtual == "0003-1" || imagemAtual == "0003-2" || imagemAtual == "0003-3" || imagemAtual == "0003-4") {
+    }  else if (imagemAtual == "0003-1" || imagemAtual == "0003-2" || imagemAtual == "0003-4" || imagemAtual == "0003-3" || imagemAtual == "0003-3-2") {
         mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0003.png')
         document.getElementById('sala0003-1').style.display = "flex"
         document.getElementById('sala0003-3,4').style.display = "none"
         document.getElementById('sala0003-2').style.display = "flex"
+        document.getElementById('molduraPuzzleTela').style.display = "none"
         document.getElementById('pegarlanterna').style.display = "none" 
-        
-    } else if (imagemAtual == "0004-1" || imagemAtual == "0004-2" || imagemAtual == "0004-3" ) {
-        mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0004.png')
-        document.getElementById('sala0004-1').style.display = "flex"
-        // document.getElementById('sala0004-2').style.display = "flex"
-        document.getElementById('sala0004-3').style.display = "none"
-        document.getElementById('madeiraPorta').style.display = "none"
-        document.getElementById('controladorSenha').style.display = "none"
+        document.getElementById('divFoto3').style.display = "none"
+ 
+    }   else if (imagemAtual == "0004-1" || imagemAtual == "0004-2" || imagemAtual == "0004-3" ) {
+            mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0004.png')
+            document.getElementById('sala0004-1').style.display = "flex"
+            // document.getElementById('sala0004-2').style.display = "flex"
+            document.getElementById('sala0004-3').style.display = "none"
+            document.getElementById('madeiraPorta').style.display = "none"
+            document.getElementById('controladorSenha').style.display = "none"
     
-    } else if (imagemAtual == '0001-1'){
-        mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0001.png')
-        document.getElementById('sala0001-1').style.display = "flex"
-        document.getElementById('ponteiros').style.display = "none"
-        document.getElementById("machado").style.display = "flex"
+    }   else if (imagemAtual == '0001-1'){
+            mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0001.png')
+            document.getElementById('sala0001-1').style.display = "flex"
+            document.getElementById('ponteiros').style.display = "none"
+            document.getElementById("machado").style.display = "flex"
     }
 }
 
