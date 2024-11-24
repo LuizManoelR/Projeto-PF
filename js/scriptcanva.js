@@ -67,7 +67,7 @@ const verificarSenha = () => { // Função utilizada para o fim do jogo
         ctx.fillRect(0, 0, canvas.width, canvas.height); // Pinta o fundo de preto na resolução total do canvas
         
         const porta = new Audio()
-        porta.src = 'audio/efeitos sonoros/porta.MP3'
+        porta.src = './audio/efeitos sonoros/porta.MP3'
         porta.play()
         porta.addEventListener('ended', () => {
             
@@ -102,7 +102,7 @@ const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual=0) => { //Altera 
 const background = (direcao) => { // Função para passar as imagens com click
     document.getElementById("btn_esquerda").src = "./img/interfaceUsuario/botao_esquerda.png" // Aqui ele tira os botões do tutorial para os botões normais
     document.getElementById("btn_direita").src = "./img/interfaceUsuario/botao_direita.png"
-    
+    play_track('./audio/efeitos sonoros/backg_effect.MP3')(0.3)(false)('play')// toca o efeito sonoro de passar imagens
     const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i) // Tira a formatação de link do nome
     
     if (imagemAtual == "0001" || imagemAtual == "0001-1") {
@@ -128,10 +128,16 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     
     console.log(imagemProxima)
 
+    if (imagemProxima == '0003-4' || imagemProxima == '0002-4'){ // toca o efeito sonoro da folha
+        play_track('./audio/efeitos sonoros/folha_effect.MP3')(0.6)(false)('play')}
+
+    else if (idAtual == 'sala0004-2') {play_track('./audio/efeitos sonoros/effect_gaveta.MP3')(0.3)(false)('play')}// toca o efeito sonoro da gaveta
+    
+    else {play_track('./audio/efeitos sonoros/inspecionar.MP3')(0.8)(false)('play')} // toca o effeito sonoro de inspecionar
+
     if (imagemProxima == "0002-2") {
         document.getElementById("controladorSenha").style.display = "flex" //faça o id do próximo elemento aparecer
     }
-    else if (idAtual == 'sala0004-2') {play_track('audio/efeitos sonoros/effect_gaveta.MP3')(0.3)(false)('play')}
     
     mudeImgSrc('esquerda', imgProx) 
     document.getElementById(idProx).style.display = "flex"//faça o id do próximo elemento aparecer
@@ -148,6 +154,8 @@ const sair_inspecionar = () =>{
     document.getElementById('direita').style.display = "flex" // Faz aparecer os botões da direta e esquerda 
     document.getElementById('esquerda').style.display = "flex"
     document.getElementById('baixo').style.display = "none"
+
+    play_track('./audio/efeitos sonoros/exit_inspecionar.MP3')(0.8)(false)('play')// toca o efeito sonoro de sair de inspecionar
 
     if ((imagemAtual == "0002-1" || imagemAtual == "0002-2" )|| (imagemAtual == "0002-3" || imagemAtual == "0002-4")) { // Confere que imagem está sendo mostrada agora
         mudeImgSrc("esquerda", 'img/imgFundo/0002.png') // Muda para a imagem principal da sala
