@@ -49,7 +49,7 @@ const telaCarregamento = () => { // Função que cuida de carregar todas as imag
     ctx.fillStyle = "White";
     ctx.fillText("Carregando...", (canvas.width/2 - 200), canvas.height/2 + 50); // Cria o texto dizendo que está carregando
     
-    const listaImg =["./img/imgFundo/Fase2/0001.png","./img/imgFundo/Fase2/0001-1.png","./img/imgFundo/Fase2/0002.png","./img/imgFundo/Fase2/0002-1.png","./img/imgFundo/Fase2/0002-1-2.png","./img/imgFundo/Fase2/0002-2.png","./img/imgFundo/Fase2/0002-3.png","./img/imgFundo/Fase2/0003.png","./img/imgFundo/Fase2/0003-2.png", "./img/imgFundo/Fase2/0003-3-2.png","./img/imgFundo/Fase2/0003-3.png","./img/imgFundo/Fase2/0003-4.png","./img/imgFundo/Fase2/0004.png","./img/imgFundo/Fase2/0004-1.png", "./img/imgFundo/Fase2/0004-1-madeira.png", "./img/imgFundo/Fase2/0004-madeira.png"]
+    const listaImg =["./img/imgFundo/Fase2/0001.png","./img/imgFundo/Fase2/0001-1.png","./img/imgFundo/Fase2/0001-2.png","./img/imgFundo/Fase2/0001-3.png","./img/imgFundo/Fase2/0002.png","./img/imgFundo/Fase2/0002-1.png","./img/imgFundo/Fase2/0002-1-2.png","./img/imgFundo/Fase2/0002-2.png","./img/imgFundo/Fase2/0002-3.png","./img/imgFundo/Fase2/0003.png","./img/imgFundo/Fase2/0003-2.png", "./img/imgFundo/Fase2/0003-3-2.png","./img/imgFundo/Fase2/0003-3.png","./img/imgFundo/Fase2/0003-4.png","./img/imgFundo/Fase2/0004.png","./img/imgFundo/Fase2/0004-1.png", "./img/imgFundo/Fase2/0004-1-madeira.png", "./img/imgFundo/Fase2/0004-madeira.png"]
     listaImg.map((x,acc) => {
         const imagemPreload = new Image(); // Cria um novo objeto img
         imagemPreload.src = x // Coloca essa novo objeto com src igual ao valor da lista
@@ -75,6 +75,7 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
     document.getElementById("direita").style.display = "none"//faça o id do próximo elemento aparecer
     document.getElementById("esquerda").style.display = "none"//faça o id do próximo elemento aparecer
     if (idProx == "ponteiros") {
+        document.getElementById("portarelogio").style.display = 'none'
         comecarMove()
     }
     

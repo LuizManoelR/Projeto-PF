@@ -20,6 +20,7 @@ const mouseMoveHandler = (id) => (e) => {
     if (rotate2 > -100 && rotate2 < -75) { // Verifica se a seta2 (Min) está na posição correta
       if (rotate1 > 85 && rotate1 < 95) { // Verifica se a seta1 (Horas) está na posição correta
         document.getElementById("machadoEstado").style.display = "flex" // Coloca o machado em visualização do jogador
+        document.getElementById("portarelogio").style.display= "none"
         // document.removeEventListener("mousemove", mouseMoveHandler("seta2"), false);
         // document.removeEventListener("mousemove", mouseMoveHandler("seta1"), false);
         document.getElementById(id + "Check").checked = 0
