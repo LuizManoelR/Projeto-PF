@@ -102,7 +102,7 @@ const mudeImgSrc = (direcao, imagemEsq, imagemDir=0, salaAtual=0) => { //Altera 
 const background = (direcao) => { // Função para passar as imagens com click
     document.getElementById("btn_esquerda").src = "./img/interfaceUsuario/botao_esquerda.png" // Aqui ele tira os botões do tutorial para os botões normais
     document.getElementById("btn_direita").src = "./img/interfaceUsuario/botao_direita.png"
-    play_track('./audio/efeitos sonoros/backg_effect.MP3')(0.3)(false)('play')// toca o efeito sonoro de passar imagens
+    //play_track('./audio/efeitos sonoros/backg_effect.MP3')(0.3)(false)('play')// toca o efeito sonoro de passar imagens
     const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i) // Tira a formatação de link do nome
     
     if (imagemAtual == "0001" || imagemAtual == "0001-1") {
@@ -114,6 +114,23 @@ const background = (direcao) => { // Função para passar as imagens com click
     } else if (imagemAtual == "0004" ) {
         mudeImgSrc(direcao, "./img/imgFundo/0002.png", "./img/imgFundo/0001.png", imagemAtual)
     }    
+}
+
+const inspecionar_sp = (id) =>{
+
+    if (id == 'quadro') {
+        
+        mudeImgSrc('esquerda', './img/imgFundo/0003-2.png')
+        play_track('./audio/efeitos sonoros/quadro.MP3')(0.6)(false)('play')
+        document.getElementById('sala0003-2').style.display = 'none'
+    }
+    else if (id == 'armario') {
+        
+        mudeImgSrc('esquerda', './img/imgFundo/0001-1.png')
+        play_track('./audio/efeitos sonoros/porta_gr.MP3')(0.6)(false)('play')
+        document.getElementById('sala0001').style.display = 'none'
+    }
+
 }
 
 const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuida de sumir com os botões que estão na tela atualmente para aparecer os próximos botões

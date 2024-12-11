@@ -69,6 +69,12 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
          document.getElementById('controladorSenha').style.display = "flex" 
     }
 
+    if (idAtual == 'sala0002-3') {play_track('./audio/efeitos sonoros/travesseiro_effect.MP3')(0.8)(false)('play')}// toca o efeito sonoro da gaveta
+    
+    else {play_track('./audio/efeitos sonoros/inspecionar.MP3')(0.6)(false)('play')} // toca o effeito sonoro de inspecionar
+
+   
+
     mudeImgSrc('esquerda', imgProx) 
     document.getElementById(idProx).style.display = "flex"//faça o id do próximo elemento aparecer
     document.getElementById("baixo").style.display = "flex"//faça o id do próximo elemento aparecer
@@ -85,6 +91,8 @@ const inspecionar = (idAtual,idAtual2, idProx, imgProx) => {// função que cuid
 const sair_inspecionar = () =>{
 
     const imagemAtual = filterNome(img.src).reduce((acc, i) => acc + i) // Tira a formatação do texto para só 0001 no lugar de um link completo
+
+    play_track('./audio/efeitos sonoros/exit_inspecionar.MP3')(0.8)(false)('play')// toca o efeito sonoro de sair de inspecionar
 
     document.getElementById('direita').style.display = "flex" // Faz aparecer os botões da direta e esquerda 
     document.getElementById('esquerda').style.display = "flex"
@@ -129,17 +137,23 @@ const sair_inspecionar = () =>{
 const verificarSenha = () => { // Função utilizada para o fim do jogo
     if (document.getElementById('senhaInput').value == 8415) { // Verifica se o texto colocado é a senha correta
 
-        document.getElementById('textoFinal').style.display = "flex" // Faz aparecer o texto de parabéns
         document.getElementById('controladorSenha').style.display = "none" // Desaparece o local para colocar a senha 
         document.getElementById('direita').style.display = "none"  // Desaparece os botões
         document.getElementById('esquerda').style.display = "none"
         document.getElementById('baixo').style.display = "none"
         document.getElementById('inventariogeral').style.display = "none"
         document.getElementById('madeiraPorta').style.display = "none"
-
+        
         ctx.fillStyle = "black"; 
         ctx.fillRect(0, 0, canvas.width, canvas.height); // Pinta o fundo de preto na resolução total do canvas
-
+        trilhasonora_2()
+        const porta = new Audio()
+        porta.src = './audio/efeitos sonoros/porta.MP3'
+        porta.play()
+        porta.addEventListener('ended', () => {
+            
+            document.getElementById('textoFinal').style.display = "flex" // Faz aparecer o texto de parabéns
+        })
     } else {
         document.getElementById('senhaInput').value = "" // Caso a senha esteja errado, apague o texto escrito pelo jogador
     }

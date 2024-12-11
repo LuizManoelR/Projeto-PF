@@ -1,5 +1,6 @@
 // Funções de Inventários
 const atualizarElementoINV = (posicao, idBotaoAntigo) => { // Atualiza o inventário com o item que o jogador acabou de pegar
+    play_track('./audio/efeitos sonoros/collect_effect.MP3')(1)(false)('play')
     if (posicao == 1) {
         document.getElementById("gavetalanterna").style.display = "none"
         document.getElementById('tutorialFase2').style.display = "flex"
@@ -37,6 +38,7 @@ const usarElementoINV = (posicao, idBotaoAntigo) => { // Função utilizada para
     if (existeElementoINV(posicao) == 1) { // Verifica se o item existe
         if (document.getElementById('inv' + posicao + "Check").checked == 1) { // Verifica se o mesmo está selecionado 
             if (idBotaoAntigo == "madeiraPorta") {
+                play_track('./audio/efeitos sonoros/madeira_effect.MP3')(1)(false)('play')
                 document.getElementById(idBotaoAntigo).style.display = "none" // Some o item do ambiente 
                 document.getElementById('inv' + posicao).style.display = "none" // Some o item no inventário
                 document.getElementById('machadoMadeira').style.display = "none" // Some o item no inventário
@@ -46,6 +48,7 @@ const usarElementoINV = (posicao, idBotaoAntigo) => { // Função utilizada para
             } if (idBotaoAntigo == "lanterna") {
                 document.getElementById(idBotaoAntigo) = none
             } else if (idBotaoAntigo == "lanternaQuadro") {
+                play_track('./audio/efeitos sonoros/lanterna_effect.wav')(1)(false)('play')
                 mudeImgSrc("esquerda", 'img/imgFundo/Fase2/0002-1-2.png') // Caso ele use a lanterna no quadro, mude a imagem
             }
         }
